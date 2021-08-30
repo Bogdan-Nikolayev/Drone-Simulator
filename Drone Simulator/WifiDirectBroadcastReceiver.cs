@@ -49,7 +49,9 @@ namespace Drone_Simulator
                     break;
             }
             
-            Log.Debug("DroneSimulator", "WifiDirectBroadcastReceiver OnReceive " + intent);
+            // Condition to prevent spam in logcat.
+            if (action != WifiP2pManager.WifiP2pStateChangedAction)
+                Log.Debug("DroneSimulator", "WifiDirectBroadcastReceiver OnReceive " + intent);
         }
     }
 }

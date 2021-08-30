@@ -3,7 +3,6 @@ using Android.Content;
 using Android.Net.Wifi.P2p;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Runtime;
 using Android.Util;
 using Android.Widget;
 
@@ -17,13 +16,13 @@ namespace Drone_Simulator
         private WifiP2pManager _manager;
         private WifiP2pManager.Channel _channel;
         private WifiDirectBroadcastReceiver _receiver;
-        
+
         public bool IsWifiDirectEnabled { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
+            // Set our view from the "main" layout resource.
             SetContentView(Resource.Layout.activity_main);
 
             // Indicates a change in the Wi-Fi P2P status.
@@ -37,6 +36,9 @@ namespace Drone_Simulator
 
             _manager = (WifiP2pManager)GetSystemService(WifiP2pService);
             _channel = _manager.Initialize(this, Looper.MainLooper, null);
+
+            Button discoverPeersButton = FindViewById<Button>(Resource.Id.discoverPeersButton);
+            discoverPeersButton.Click += (sender, args) => DiscoverPeers();
 
             Log.Debug("DroneSimulator", "MainActivity OnCreate");
         }
@@ -60,10 +62,12 @@ namespace Drone_Simulator
 
             Log.Debug("DroneSimulator", "MainActivity OnPause");
         }
-
+        
         public void DiscoverPeers()
         {
             _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
+
+            Log.Debug("DroneSimulator", "MainActivity DiscoverPeers");
         }
     }
 }
