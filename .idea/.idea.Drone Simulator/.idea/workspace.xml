@@ -21,16 +21,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/3e/d3b7b2d5/WifiP2pDeviceList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/f5/850a4d9c/WifiP2pFailureReason.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Drone Simulator/IWifiDirectActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectActionListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Properties/AndroidManifest.xml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
       <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Properties/AndroidManifest.xml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/PeerListActionListener.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -73,7 +75,7 @@
       <updated>1630335746605</updated>
       <workItem from="1630335776266" duration="601000" />
       <workItem from="1630336686277" duration="3457000" />
-      <workItem from="1630340715247" duration="1681000" />
+      <workItem from="1630340715247" duration="3181000" />
     </task>
     <servers />
   </component>

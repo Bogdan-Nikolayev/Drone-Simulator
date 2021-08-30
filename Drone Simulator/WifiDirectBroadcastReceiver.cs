@@ -36,6 +36,10 @@ namespace Drone_Simulator
                     break;
                 case WifiP2pManager.WifiP2pPeersChangedAction:
                     // The peer list has changed! We should probably do something about that.
+                    _manager.RequestPeers(_channel, new PeerListActionListener(peers =>
+                    {
+                        
+                    }));
                     break;
                 case WifiP2pManager.WifiP2pConnectionChangedAction:
                     // Connection state changed! We should probably do something about that.
