@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Net.Wifi.P2p;
+using Android.Util;
 
 namespace Drone_Simulator.Android
 {
@@ -9,14 +10,14 @@ namespace Drone_Simulator.Android
     {
         private readonly WifiP2pManager _manager;
         private readonly WifiP2pManager.Channel _channel;
-        private readonly Activity _activity;
+        private readonly IWifiDirectActivity _activity;
 
         public WifiDirectBroadcastReceiver()
         {
             
         }
         
-        public WifiDirectBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel, Activity activity)
+        public WifiDirectBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel, IWifiDirectActivity activity)
         {
             _manager = manager;
             _channel = channel;
@@ -48,11 +49,13 @@ namespace Drone_Simulator.Android
                     //     WifiP2pManager.EXTRA_WIFI_P2P_DEVICE));
                     break;
             }
+            
+            Log.Debug("DroneSimulator", "WifiDirectBroadcastReceiver OnReceive " + intent);
         }
 
         private void UpdateWifiP2pState(bool isEnabled)
         {
-            // _activity.SetIsWifiP2pEnabled(true);
+            _activity.IsWifiDirectEnabled = isEnabled;
         }
     }
 }

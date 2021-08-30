@@ -1,4 +1,5 @@
 ﻿using Android.Net.Wifi.P2p;
+using Android.Util;
 
 namespace Drone_Simulator.Android
 {
@@ -6,10 +7,12 @@ namespace Drone_Simulator.Android
     {
         public void OnFailure(WifiP2pFailureReason reason)
         {
+            Log.Debug("DroneSimulator", "WifiDirectActionListener OnFailure " + reason);
         }
 
         public void OnSuccess()
         {
+            Log.Debug("DroneSimulator", "WifiDirectActionListener OnSuccess");
         }
     }
 }

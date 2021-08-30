@@ -12,14 +12,16 @@ namespace Drone_Simulator.Android
     /// </summary>
     [Activity(Label = "Drone_Simulator", Theme = "@style/MainTheme", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IWifiDirectActivity
     {
         private readonly IntentFilter _intentFilter = new IntentFilter();
 
         private WifiP2pManager _manager;
         private WifiP2pManager.Channel _channel;
         private WifiDirectBroadcastReceiver _receiver;
-        
+
+        public bool IsWifiDirectEnabled { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -41,21 +43,26 @@ namespace Drone_Simulator.Android
             _manager = (WifiP2pManager)GetSystemService(WifiP2pService);
             _channel = _manager.Initialize(this, Looper.MainLooper, null);
 
-            Log.Debug("DroneSimulator", "Main activity OnCreate");
+            Log.Debug("DroneSimulator", "MainActivity OnCreate");
         }
-        
+
         // Register the BroadcastReceiver with the intent values to be matched.
+
         protected override void OnResume() {
             base.OnResume();
             
             _receiver = new WifiDirectBroadcastReceiver(_manager, _channel, this);
             RegisterReceiver(_receiver, _intentFilter);
+            
+            Log.Debug("DroneSimulator", "MainActivity OnResume");
         }
-        
+
         protected override void OnPause() {
             base.OnPause();
             
             UnregisterReceiver(_receiver);
+            
+            Log.Debug("DroneSimulator", "MainActivity OnPause");
         }
 
         public void DiscoverPeers()

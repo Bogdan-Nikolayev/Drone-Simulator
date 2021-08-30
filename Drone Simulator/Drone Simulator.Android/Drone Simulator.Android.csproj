@@ -49,6 +49,7 @@
         <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="IWifiDirectActivity.cs" />
         <Compile Include="MainActivity.cs" />
         <Compile Include="Resources\Resource.Designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
