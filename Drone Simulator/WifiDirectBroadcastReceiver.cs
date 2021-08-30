@@ -10,7 +10,13 @@ namespace Drone_Simulator
         private readonly WifiP2pManager _manager;
         private readonly WifiP2pManager.Channel _channel;
         private readonly IWifiDirectActivity _activity;
-
+        
+        // ReSharper disable once UnusedMember.Global
+        public WifiDirectBroadcastReceiver()
+        {
+            
+        }
+        
         public WifiDirectBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel, IWifiDirectActivity activity)
         {
             _manager = manager;

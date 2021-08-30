@@ -19,9 +19,9 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Drone Simulator/IWifiDirectActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectActionListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Properties/AndroidManifest.xml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -37,6 +37,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_28" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-08-30T15:21:02.514955100Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -61,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1630335746605</updated>
       <workItem from="1630335776266" duration="601000" />
-      <workItem from="1630336686277" duration="6000" />
+      <workItem from="1630336686277" duration="307000" />
     </task>
     <servers />
   </component>
