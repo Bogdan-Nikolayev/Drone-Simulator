@@ -10,20 +10,20 @@ namespace Drone_Simulator
         private readonly WifiP2pManager _manager;
         private readonly WifiP2pManager.Channel _channel;
         private readonly IWifiDirectActivity _activity;
-        
+
         // ReSharper disable once UnusedMember.Global
         public WifiDirectBroadcastReceiver()
         {
-            
         }
-        
-        public WifiDirectBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel, IWifiDirectActivity activity)
+
+        public WifiDirectBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel,
+            IWifiDirectActivity activity)
         {
             _manager = manager;
             _channel = channel;
             _activity = activity;
         }
-        
+
         public override void OnReceive(Context? context, Intent? intent)
         {
             string action = intent.Action;
@@ -36,9 +36,12 @@ namespace Drone_Simulator
                     break;
                 case WifiP2pManager.WifiP2pPeersChangedAction:
                     // The peer list has changed! We should probably do something about that.
-                    _manager.RequestPeers(_channel, new PeerListActionListener(peers =>
+                    _manager.RequestPeers(_channel, new PeerListListener(peers =>
                     {
-                        
+                        foreach (WifiP2pDevice device in peers.DeviceList)
+                        {
+                            Log.Debug("DroneSimulator", "WifiDirectBroadcastReceiver " + device.DeviceName);
+                        }
                     }));
                     break;
                 case WifiP2pManager.WifiP2pConnectionChangedAction:
@@ -53,9 +56,7 @@ namespace Drone_Simulator
                     break;
             }
             
-            // Condition to prevent spam in logcat.
-            if (action != WifiP2pManager.WifiP2pStateChangedAction)
-                Log.Debug("DroneSimulator", "WifiDirectBroadcastReceiver OnReceive " + intent);
+            Log.Debug("DroneSimulator", "WifiDirectBroadcastReceiver OnReceive " + intent);
         }
     }
 }

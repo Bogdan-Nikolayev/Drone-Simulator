@@ -4,11 +4,11 @@ using Android.Util;
 
 namespace Drone_Simulator
 {
-    public class PeerListActionListener : Java.Lang.Object, WifiP2pManager.IPeerListListener
+    public class PeerListListener : Java.Lang.Object, WifiP2pManager.IPeerListListener
     {
         private readonly Action<WifiP2pDeviceList> _onPeersAvailable;
         
-        public PeerListActionListener(Action<WifiP2pDeviceList> onPeersAvailable)
+        public PeerListListener(Action<WifiP2pDeviceList> onPeersAvailable)
         {
             _onPeersAvailable = onPeersAvailable;
         }
