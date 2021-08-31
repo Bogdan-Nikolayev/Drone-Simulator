@@ -28,12 +28,12 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Drone Simulator/IWifiDirectActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectActionListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Properties/AndroidManifest.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/PeerListActionListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/PeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -49,11 +49,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R52M80PQ5FF" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-08-30T17:27:31.438820700Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_28" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-08-31T13:17:09.899356400Z" />
+    <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
   </component>
   <component name="RunManager">
     <configuration name="Drone Simulator" type="XamarinAndroidProject" factoryName="Xamarin.Android">
@@ -78,6 +81,7 @@
       <workItem from="1630336686277" duration="3457000" />
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
+      <workItem from="1630410987258" duration="3241000" />
     </task>
     <servers />
   </component>

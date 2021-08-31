@@ -4,9 +4,26 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-    <Button
-            android:text="Discover Peers"
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/discoverPeersButton"/>
+            android:layout_height="match_parent">
+        <Button
+                android:text="Discover Peers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/discoverPeersButton"/>
+        <Button
+                android:text="Open WebView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/openWebViewButton"/>
+    </LinearLayout>
+    <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webView"
+            android:elevation="10px"
+            android:visibility="invisible">
+    </WebView>
 </RelativeLayout>
