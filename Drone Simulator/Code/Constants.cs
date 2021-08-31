@@ -6,7 +6,7 @@
         {
             public const string DroneSimulator = "DroneSimulator";
         }
-    
+
         public const int MainPermissionsRequestCode = 0;
     }
 }

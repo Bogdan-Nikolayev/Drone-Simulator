@@ -99,8 +99,11 @@ namespace Drone_Simulator
         private void OpenWebView()
         {
             WebView webView = FindViewById<WebView>(Resource.Id.webView);
+            
             webView.Settings.JavaScriptEnabled = true;
+            // Provide the required permissions.
             webView.SetWebChromeClient(new GrantedWebChromeClient());
+            
             webView.LoadUrl("file:///android_asset/ar/ar-js-location.html");
             webView.Visibility = ViewStates.Visible;
         }
