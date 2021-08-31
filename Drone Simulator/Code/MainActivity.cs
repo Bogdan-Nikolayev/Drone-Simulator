@@ -8,8 +8,8 @@ using Android.Util;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
-using Drone_Simulator.WifiDirect;
 using Drone_Simulator.Extensions;
+using Drone_Simulator.WifiDirect;
 
 namespace Drone_Simulator
 {
@@ -72,7 +72,7 @@ namespace Drone_Simulator
         {
             if (!this.AllOfPermissionsGranted(Manifest.Permission.AccessFineLocation, Manifest.Permission.Camera))
                 RequestPermissions(new[] {Manifest.Permission.AccessFineLocation, Manifest.Permission.Camera},
-                    Constants.MainPermissionsRequestCode);
+                    Constants.RequestCode.MainPermissions);
         }
 
         private void SetupIntentFilter()
@@ -99,11 +99,11 @@ namespace Drone_Simulator
         private void OpenWebView()
         {
             WebView webView = FindViewById<WebView>(Resource.Id.webView);
-            
+
             webView.Settings.JavaScriptEnabled = true;
             // Provide the required permissions.
             webView.SetWebChromeClient(new GrantedWebChromeClient());
-            
+
             webView.LoadUrl("file:///android_asset/ar/ar-js-location.html");
             webView.Visibility = ViewStates.Visible;
         }
