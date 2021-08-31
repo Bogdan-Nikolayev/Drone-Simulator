@@ -58,6 +58,7 @@
         <Compile Include="Code\Constants.cs" />
         <Compile Include="Code\Extensions\ActivityExtensions.cs" />
         <Compile Include="Code\MainActivity.cs" />
+        <Compile Include="Code\GrantedWebChromeClient.cs" />
         <Compile Include="Code\WifiDirect\IWifiDirectActivity.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectPeerListListener.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectActionListener.cs" />
