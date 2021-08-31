@@ -17,7 +17,7 @@ namespace Drone_Simulator.WifiDirect
 
         public void OnSuccess()
         {
-            Log.Debug(Tag.DroneSimulator, string.Join(" ",
+            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
                 nameof(WifiDirectActionListener), nameof(OnSuccess)));
 
             _onSuccess?.Invoke();
@@ -25,7 +25,7 @@ namespace Drone_Simulator.WifiDirect
 
         public void OnFailure(WifiP2pFailureReason reason)
         {
-            Log.Debug(Tag.DroneSimulator, string.Join(" ",
+            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
                 nameof(WifiDirectActionListener), nameof(OnFailure), reason));
 
             _onFailure?.Invoke(reason);

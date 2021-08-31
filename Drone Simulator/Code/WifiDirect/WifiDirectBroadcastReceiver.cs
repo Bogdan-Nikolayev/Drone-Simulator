@@ -27,7 +27,7 @@ namespace Drone_Simulator.WifiDirect
 
         public override void OnReceive(Context? context, Intent? intent)
         {
-            Log.Debug(Tag.DroneSimulator, string.Join(" ",
+            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
                 nameof(WifiDirectBroadcastReceiver), nameof(OnReceive), intent));
 
             string action = intent.Action;
@@ -43,7 +43,7 @@ namespace Drone_Simulator.WifiDirect
                     _manager.RequestPeers(_channel, new WifiDirectPeerListListener(peers =>
                     {
                         foreach (WifiP2pDevice device in peers.DeviceList)
-                            Log.Debug(Tag.DroneSimulator, string.Join(" ",
+                            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
                                 nameof(WifiDirectPeerListListener),
                                 nameof(WifiDirectPeerListListener.OnPeersAvailable),
                                 device.DeviceName));
