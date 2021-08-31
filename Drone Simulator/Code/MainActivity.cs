@@ -25,6 +25,9 @@ namespace Drone_Simulator
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            
+            Log.Debug(Tag.DroneSimulator, string.Join(" ", nameof(MainActivity), nameof(OnCreate)));
+
             // Set our view from the "main" layout resource.
             SetContentView(Resource.Layout.activity_main);
 
@@ -39,37 +42,35 @@ namespace Drone_Simulator
 
             _manager = (WifiP2pManager)GetSystemService(WifiP2pService);
             _channel = _manager.Initialize(this, Looper.MainLooper, null);
+            _receiver = new WifiDirectBroadcastReceiver(_manager, _channel, this);
 
             SubscribeToViewEvents();
-
-            Log.Debug("DroneSimulator", "MainActivity OnCreate");
         }
 
         protected override void OnResume()
         {
             base.OnResume();
+            
+            Log.Debug(Tag.DroneSimulator, string.Join(" ", nameof(MainActivity), nameof(OnResume)));
 
             // Register the BroadcastReceiver with the intent values to be matched.
-            _receiver = new WifiDirectBroadcastReceiver(_manager, _channel, this);
             RegisterReceiver(_receiver, _intentFilter);
-
-            Log.Debug("DroneSimulator", "MainActivity OnResume");
         }
 
         protected override void OnPause()
         {
             base.OnPause();
+            
+            Log.Debug(Tag.DroneSimulator, string.Join(" ", nameof(MainActivity), nameof(OnPause)));
 
             UnregisterReceiver(_receiver);
-
-            Log.Debug("DroneSimulator", "MainActivity OnPause");
         }
         
         public void DiscoverPeers()
         {
-            _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
+            Log.Debug(Tag.DroneSimulator, string.Join(" ", nameof(MainActivity), nameof(DiscoverPeers)));
 
-            Log.Debug("DroneSimulator", "MainActivity DiscoverPeers");
+            _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
         }
 
         private void SubscribeToViewEvents()

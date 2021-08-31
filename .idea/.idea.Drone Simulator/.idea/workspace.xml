@@ -38,10 +38,10 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Tag.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/PeerListListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -89,7 +89,7 @@
       <workItem from="1630336686277" duration="3457000" />
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
-      <workItem from="1630410987258" duration="5437000" />
+      <workItem from="1630410987258" duration="6235000" />
     </task>
     <servers />
   </component>
