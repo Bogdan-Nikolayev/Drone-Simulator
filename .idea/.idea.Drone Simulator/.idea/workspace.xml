@@ -59,11 +59,11 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Properties/AndroidManifest.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebChromeClientWithCamera.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe-ar-nft.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe.min.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Constants.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe.min.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -119,7 +119,7 @@
       <workItem from="1630336686277" duration="3457000" />
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
-      <workItem from="1630410987258" duration="19558000" />
+      <workItem from="1630410987258" duration="20049000" />
     </task>
     <servers />
   </component>
