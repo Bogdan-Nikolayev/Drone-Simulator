@@ -7,6 +7,7 @@ using Android.Util;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
+using Drone_Simulator.WifiDirect;
 
 namespace Drone_Simulator
 {
@@ -83,8 +84,36 @@ namespace Drone_Simulator
         private void OpenWebView()
         {
             WebView webView = FindViewById<WebView>(Resource.Id.webView);
-            webView.LoadUrl("https://www.google.com.ua/?hl=ru");
+            webView.LoadUrl("file:///android_asset/ar/ar-js-location.html");
             webView.Visibility = ViewStates.Visible;
+        }
+
+        private void RequestCameraPermission()
+        {
+            // if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.AccessFineLocation)) 
+            // {
+            //     // Provide an additional rationale to the user if the permission was not granted
+            //     // and the user would benefit from additional context for the use of the permission.
+            //     // For example if the user has previously denied the permission.
+            //     // Log.Info(TAG, "Displaying camera permission rationale to provide additional context.");
+            //     //
+            //     // Snackbar.Make(layout, 
+            //     //         "Give access to the camera!!!",
+            //     //         Snackbar.LengthIndefinite)
+            //     //     .SetAction("Ok", 
+            //     //         new Action<View>(delegate(View obj) {
+            //     //                 
+            //     //             }    
+            //     //         )
+            //     //     ).Show();
+            //     var requiredPermissions = new String[] { Manifest.Permission.AccessFineLocation };
+            //
+            //     ActivityCompat.RequestPermissions(this, requiredPermissions, REQUEST_LOCATION);
+            // }
+            // else 
+            // {
+            //     ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.Camera }, REQUEST_LOCATION);
+            // }
         }
     }
 }

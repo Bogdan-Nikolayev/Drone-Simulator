@@ -2,7 +2,7 @@
 using Android.Net.Wifi.P2p;
 using Android.Util;
 
-namespace Drone_Simulator
+namespace Drone_Simulator.WifiDirect
 {
     [BroadcastReceiver(Enabled = true, Exported = false)]
     public class WifiDirectBroadcastReceiver : BroadcastReceiver
@@ -11,6 +11,7 @@ namespace Drone_Simulator
         private readonly WifiP2pManager.Channel _channel;
         private readonly IWifiDirectActivity _activity;
 
+        // Should be an open constructor without parameters.
         // ReSharper disable once UnusedMember.Global
         public WifiDirectBroadcastReceiver()
         {
@@ -26,37 +27,35 @@ namespace Drone_Simulator
 
         public override void OnReceive(Context? context, Intent? intent)
         {
+            Log.Debug(Tag.DroneSimulator, string.Join(" ",
+                nameof(WifiDirectBroadcastReceiver), nameof(OnReceive), intent));
+
             string action = intent.Action;
             switch (action)
             {
                 case WifiP2pManager.WifiP2pStateChangedAction:
-                    // Determine if Wifi P2P mode is enabled or not, alert the Activity.
+                    // Check to see if Wi-Fi is enabled and notify appropriate activity.
                     int state = intent.GetIntExtra(WifiP2pManager.ExtraWifiState, -1);
                     _activity.IsWifiDirectEnabled = state == (int)WifiP2pState.Enabled;
                     break;
                 case WifiP2pManager.WifiP2pPeersChangedAction:
-                    // The peer list has changed! We should probably do something about that.
-                    _manager.RequestPeers(_channel, new PeerListListener(peers =>
+                    // Call WifiP2pManager.requestPeers() to get a list of current peers.
+                    _manager.RequestPeers(_channel, new WifiDirectPeerListListener(peers =>
                     {
                         foreach (WifiP2pDevice device in peers.DeviceList)
-                        {
-                            Log.Debug("DroneSimulator", "WifiDirectBroadcastReceiver " + device.DeviceName);
-                        }
+                            Log.Debug(Tag.DroneSimulator, string.Join(" ",
+                                nameof(WifiDirectPeerListListener),
+                                nameof(WifiDirectPeerListListener.OnPeersAvailable),
+                                device.DeviceName));
                     }));
                     break;
                 case WifiP2pManager.WifiP2pConnectionChangedAction:
-                    // Connection state changed! We should probably do something about that.
+                    // Respond to new connection or disconnections.
                     break;
                 case WifiP2pManager.WifiP2pThisDeviceChangedAction:
-                    // _activity.GetFragmentManager().FindFragmentById(global::Android.Resource.Id)
-                    // DeviceListFragment fragment = (DeviceListFragment) activity.getFragmentManager()
-                    //     .findFragmentById(R.id.frag_list);
-                    // fragment.updateThisDevice((WifiP2pDevice) intent.getParcelableExtra(
-                    //     WifiP2pManager.EXTRA_WIFI_P2P_DEVICE));
+                    // Respond to this device's wifi state changing.
                     break;
             }
-            
-            Log.Debug("DroneSimulator", "WifiDirectBroadcastReceiver OnReceive " + intent);
         }
     }
 }

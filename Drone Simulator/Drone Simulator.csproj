@@ -55,13 +55,14 @@
         <Reference Include="Mono.Android" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="IWifiDirectActivity.cs" />
-        <Compile Include="MainActivity.cs" />
-        <Compile Include="PeerListListener.cs" />
+        <Compile Include="Code\MainActivity.cs" />
+        <Compile Include="Code\Tag.cs" />
+        <Compile Include="Code\WifiDirect\IWifiDirectActivity.cs" />
+        <Compile Include="Code\WifiDirect\WifiDirectPeerListListener.cs" />
+        <Compile Include="Code\WifiDirect\WifiDirectActionListener.cs" />
+        <Compile Include="Code\WifiDirect\WifiDirectBroadcastReceiver.cs" />
         <Compile Include="Resources\Resource.Designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="WifiDirectActionListener.cs" />
-        <Compile Include="WifiDirectBroadcastReceiver.cs" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Resources\AboutResources.txt" />
@@ -79,6 +80,9 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
+    </ItemGroup>
+    <ItemGroup>
+      <AndroidAsset Include="Assets\ar\ar-js-location.html" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

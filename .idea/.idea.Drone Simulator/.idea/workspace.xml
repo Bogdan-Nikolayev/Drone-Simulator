@@ -32,8 +32,16 @@
       <option value="$PROJECT_DIR$/Drone Simulator/PeerListActionListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/PeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
+      <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Tag.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/PeerListListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -81,7 +89,7 @@
       <workItem from="1630336686277" duration="3457000" />
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
-      <workItem from="1630410987258" duration="3241000" />
+      <workItem from="1630410987258" duration="5437000" />
     </task>
     <servers />
   </component>

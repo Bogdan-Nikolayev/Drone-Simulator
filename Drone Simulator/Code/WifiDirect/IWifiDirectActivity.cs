@@ -1,4 +1,4 @@
-﻿namespace Drone_Simulator
+﻿namespace Drone_Simulator.WifiDirect
 {
     public interface IWifiDirectActivity
     {
