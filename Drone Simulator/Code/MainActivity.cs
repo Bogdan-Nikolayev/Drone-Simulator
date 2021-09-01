@@ -1,15 +1,12 @@
 ﻿using Android;
 using Android.App;
-using Android.Content;
-using Android.Net.Wifi.P2p;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Util;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
+using Drone_Simulator.Browser;
 using Drone_Simulator.Extensions;
-using Drone_Simulator.UI;
 using Drone_Simulator.WifiDirect;
 
 namespace Drone_Simulator
@@ -18,7 +15,7 @@ namespace Drone_Simulator
     public class MainActivity : AppCompatActivity
     {
         private WifiDirectFragment _fragment;
-        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -26,8 +23,8 @@ namespace Drone_Simulator
             RequestPermissions();
             SetContentView(Resource.Layout.activity_main);
             SubscribeToViewEvents();
-            
-            _fragment = (WifiDirectFragment)SupportFragmentManager.FindFragmentById(Resource.Id.fragment_device_list);
+
+            _fragment = (WifiDirectFragment)SupportFragmentManager.FindFragmentById(Resource.Id.fragment_wifi_direct);
         }
 
         private void RequestPermissions()

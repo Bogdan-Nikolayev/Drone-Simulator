@@ -7,8 +7,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <fragment
-                android:id="@+id/fragment_device_list"
-                class="Drone_Simulator.UI.DeviceListFragment"
+                android:id="@+id/fragment_wifi_direct"
+                class="Drone_Simulator.WifiDirect.WifiDirectFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"/>

@@ -4,7 +4,7 @@ using Android.Net.Wifi.P2p;
 using Android.Views;
 using Android.Widget;
 
-namespace Drone_Simulator.UI
+namespace Drone_Simulator.WifiDirect
 {
     public class DeviceListAdapter : BaseAdapter<WifiP2pDevice>
     {
@@ -29,7 +29,6 @@ namespace Drone_Simulator.UI
         public override View? GetView(int position, View? convertView, ViewGroup? parent)
         {
             View view = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.item_device_list, null);
-
             WifiP2pDevice device = _devices[position];
 
             view.FindViewById<TextView>(Resource.Id.text_device_name).Text = device.DeviceName;

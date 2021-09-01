@@ -1,9 +1,8 @@
-﻿using Android.Util;
-using Android.Webkit;
+﻿using Android.Webkit;
 using Java.Interop;
 using Java.Lang;
 
-namespace Drone_Simulator
+namespace Drone_Simulator.Browser
 {
     public class JavaScriptInterface : Object
     {
@@ -12,8 +11,7 @@ namespace Drone_Simulator
         // ReSharper disable once UnusedMember.Global
         public void ReceiveData(string data)
         {
-            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
-                nameof(JavaScriptInterface), nameof(ReceiveData), data));
+            Log.Debug(data);
         }
     }
 }

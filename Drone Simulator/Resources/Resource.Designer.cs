@@ -3221,7 +3221,7 @@ namespace Drone_Simulator
 			public const int forever = 2131230791;
 			
 			// aapt resource value: 0x7F080048
-			public const int fragment_device_list = 2131230792;
+			public const int fragment_wifi_direct = 2131230792;
 			
 			// aapt resource value: 0x7F080002
 			public const int FUNCTION = 2131230722;

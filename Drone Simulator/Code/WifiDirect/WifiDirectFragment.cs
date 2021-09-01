@@ -3,13 +3,10 @@ using Android.Content;
 using Android.Net.Wifi.P2p;
 using Android.OS;
 using Android.Support.V4.App;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Drone_Simulator.UI;
-using Drone_Simulator.WifiDirect;
 
-namespace Drone_Simulator
+namespace Drone_Simulator.WifiDirect
 {
     // ReSharper disable once ClassNeverInstantiated.Global
     public class WifiDirectFragment : ListFragment, IWifiDirectHandler
@@ -19,7 +16,7 @@ namespace Drone_Simulator
         private WifiP2pManager _manager;
         private WifiP2pManager.Channel _channel;
         private WifiDirectBroadcastReceiver _receiver;
-        
+
         public WifiDirectFragment()
         {
             PeerListListener = new WifiDirectPeerListListener(FillList);
@@ -36,7 +33,7 @@ namespace Drone_Simulator
             _channel = _manager.Initialize(Activity, Looper.MainLooper, null);
             _receiver = new WifiDirectBroadcastReceiver(_manager, _channel, this);
             ListAdapter = new DeviceListAdapter(Activity, _devices);
-            
+
             SetupIntentFilter();
             SubscribeToViewEvents();
         }
@@ -47,12 +44,12 @@ namespace Drone_Simulator
 
             return inflater.Inflate(Resource.Layout.fragment_wifi_direct, null);
         }
-        
+
         public override void OnResume()
         {
             base.OnResume();
 
-            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ", nameof(MainActivity), nameof(OnResume)));
+            Log.Debug();
 
             // Register the BroadcastReceiver with the intent values to be matched.
             Activity.RegisterReceiver(_receiver, _intentFilter);
@@ -62,11 +59,11 @@ namespace Drone_Simulator
         {
             base.OnPause();
 
-            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ", nameof(MainActivity), nameof(OnPause)));
+            Log.Debug();
 
             Activity.UnregisterReceiver(_receiver);
         }
-        
+
         private void SetupIntentFilter()
         {
             // Indicates a change in the Wi-Fi P2P status.
@@ -84,10 +81,10 @@ namespace Drone_Simulator
             Button discoverPeersButton = Activity.FindViewById<Button>(Resource.Id.button_discover_peers);
             discoverPeersButton.Click += (sender, args) => DiscoverPeers();
         }
-        
+
         private void DiscoverPeers()
         {
-            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ", nameof(MainActivity), nameof(DiscoverPeers)));
+            Log.Debug();
 
             _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
         }
@@ -95,8 +92,7 @@ namespace Drone_Simulator
         private void FillList(WifiP2pDeviceList peers)
         {
             foreach (WifiP2pDevice device in peers.DeviceList)
-                Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
-                    nameof(WifiDirectFragment), nameof(FillList), device.DeviceName));
+                Log.Debug(device.DeviceName);
 
             _devices.Clear();
             _devices.AddRange(peers.DeviceList);

@@ -1,6 +1,5 @@
 ﻿using System;
 using Android.Net.Wifi.P2p;
-using Android.Util;
 
 namespace Drone_Simulator.WifiDirect
 {
@@ -17,16 +16,14 @@ namespace Drone_Simulator.WifiDirect
 
         public void OnSuccess()
         {
-            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
-                nameof(WifiDirectActionListener), nameof(OnSuccess)));
+            Log.Debug();
 
             _onSuccess?.Invoke();
         }
 
         public void OnFailure(WifiP2pFailureReason reason)
         {
-            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
-                nameof(WifiDirectActionListener), nameof(OnFailure), reason));
+            Log.Debug(reason);
 
             _onFailure?.Invoke(reason);
         }

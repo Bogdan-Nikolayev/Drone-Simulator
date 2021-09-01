@@ -1,6 +1,5 @@
 ﻿using Android.Content;
 using Android.Net.Wifi.P2p;
-using Android.Util;
 
 namespace Drone_Simulator.WifiDirect
 {
@@ -27,9 +26,6 @@ namespace Drone_Simulator.WifiDirect
 
         public override void OnReceive(Context? context, Intent? intent)
         {
-            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
-                nameof(WifiDirectBroadcastReceiver), nameof(OnReceive), intent));
-
             string action = intent.Action;
             switch (action)
             {

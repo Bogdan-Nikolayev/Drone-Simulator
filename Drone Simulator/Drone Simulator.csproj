@@ -58,11 +58,11 @@
     <ItemGroup>
         <Compile Include="Code\Constants.cs" />
         <Compile Include="Code\Extensions\ActivityExtensions.cs" />
-        <Compile Include="Code\JavaScriptInterface.cs" />
         <Compile Include="Code\MainActivity.cs" />
-        <Compile Include="Code\GrantedWebChromeClient.cs" />
-        <Compile Include="Code\UI\DeviceListAdapter.cs" />
         <Compile Include="Code\Log.cs" />
+        <Compile Include="Code\Browser\GrantedWebChromeClient.cs" />
+        <Compile Include="Code\Browser\JavaScriptInterface.cs" />
+        <Compile Include="Code\WifiDirect\DeviceListAdapter.cs" />
         <Compile Include="Code\WifiDirect\IWifiDirectHandler.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectFragment.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectPeerListListener.cs" />

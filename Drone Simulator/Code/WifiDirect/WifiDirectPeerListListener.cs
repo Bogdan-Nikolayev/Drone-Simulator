@@ -1,6 +1,5 @@
 ﻿using System;
 using Android.Net.Wifi.P2p;
-using Android.Util;
 
 namespace Drone_Simulator.WifiDirect
 {
@@ -15,9 +14,6 @@ namespace Drone_Simulator.WifiDirect
 
         public void OnPeersAvailable(WifiP2pDeviceList? peers)
         {
-            Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
-                nameof(WifiDirectPeerListListener), nameof(OnPeersAvailable), peers.DeviceList.Count));
-
             _onPeersAvailable?.Invoke(peers);
         }
     }

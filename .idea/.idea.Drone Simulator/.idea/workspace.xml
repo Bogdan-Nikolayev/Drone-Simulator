@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="DroneSim" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -52,8 +53,6 @@
       <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/PeerListListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities/PermissionsUtility.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities/Permissions.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Extensions/ActivityExtensions.cs" />
@@ -62,14 +61,11 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Properties/AndroidManifest.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebChromeClientWithCamera.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe-ar-nft.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe.min.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Constants.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Drone Simulator.csproj" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_detail.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectHandler.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceDetailsFragment.cs" />
@@ -78,11 +74,19 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/row_devices.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListAdapter.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/item_device_list.xml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirectFragment.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/DeviceListAdapter.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Log.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -98,7 +102,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R52M80PQ5FF" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-01T17:24:15.363821400Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-01T19:41:26.723307800Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="STRING" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -138,7 +142,7 @@
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
       <workItem from="1630410987258" duration="20831000" />
-      <workItem from="1630486908889" duration="22959000" />
+      <workItem from="1630486908889" duration="25854000" />
     </task>
     <servers />
   </component>
