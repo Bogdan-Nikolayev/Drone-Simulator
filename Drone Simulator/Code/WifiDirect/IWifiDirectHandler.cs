@@ -1,4 +1,6 @@
-﻿namespace Drone_Simulator.WifiDirect
+﻿using Drone_Simulator.WifiDirect.Listeners;
+
+namespace Drone_Simulator.WifiDirect
 {
     public interface IWifiDirectHandler
     {

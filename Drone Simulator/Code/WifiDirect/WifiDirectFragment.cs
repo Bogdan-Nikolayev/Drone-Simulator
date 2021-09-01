@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
+using Drone_Simulator.WifiDirect.Listeners;
 
 namespace Drone_Simulator.WifiDirect
 {
@@ -32,7 +33,7 @@ namespace Drone_Simulator.WifiDirect
             _manager = (WifiP2pManager)Activity.GetSystemService(Context.WifiP2pService);
             _channel = _manager.Initialize(Activity, Looper.MainLooper, null);
             _receiver = new WifiDirectBroadcastReceiver(_manager, _channel, this);
-            ListAdapter = new DeviceListAdapter(Activity, _devices);
+            ListAdapter = new WifiDirectDeviceListAdapter(Activity, _devices);
 
             SetupIntentFilter();
             SubscribeToViewEvents();
@@ -97,7 +98,7 @@ namespace Drone_Simulator.WifiDirect
             _devices.Clear();
             _devices.AddRange(peers.DeviceList);
 
-            ((DeviceListAdapter)ListAdapter).NotifyDataSetChanged();
+            ((WifiDirectDeviceListAdapter)ListAdapter).NotifyDataSetChanged();
         }
     }
 }

@@ -77,16 +77,19 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/DeviceListAdapter.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Log.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/DeviceListAdapter.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebView/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectDeviceListAdapter.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -142,7 +145,7 @@
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
       <workItem from="1630410987258" duration="20831000" />
-      <workItem from="1630486908889" duration="25854000" />
+      <workItem from="1630486908889" duration="26283000" />
     </task>
     <servers />
   </component>

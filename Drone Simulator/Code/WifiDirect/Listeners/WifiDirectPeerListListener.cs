@@ -1,7 +1,7 @@
 ﻿using System;
 using Android.Net.Wifi.P2p;
 
-namespace Drone_Simulator.WifiDirect
+namespace Drone_Simulator.WifiDirect.Listeners
 {
     public class WifiDirectPeerListListener : Java.Lang.Object, WifiP2pManager.IPeerListListener
     {

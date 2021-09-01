@@ -6,12 +6,12 @@ using Android.Widget;
 
 namespace Drone_Simulator.WifiDirect
 {
-    public class DeviceListAdapter : BaseAdapter<WifiP2pDevice>
+    public class WifiDirectDeviceListAdapter : BaseAdapter<WifiP2pDevice>
     {
         private readonly Activity _context;
         private readonly List<WifiP2pDevice> _devices;
 
-        public DeviceListAdapter(Activity context, List<WifiP2pDevice> devices)
+        public WifiDirectDeviceListAdapter(Activity context, List<WifiP2pDevice> devices)
         {
             _context = context;
             _devices = devices;
