@@ -38,6 +38,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4124E740-F7CA-4DC6-ABF7-FC366FB2D9CA/78/8935a79d/ContextCompat.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/2b/2e584d93/WebChromeClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/3e/d3b7b2d5/WifiP2pDeviceList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/9b/6f09327f/Activity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/f5/850a4d9c/WifiP2pFailureReason.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -65,13 +66,15 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe.min.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Constants.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Drone Simulator.csproj" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_list.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_detail.xml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/row_devices.xml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListAdapter.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListFragment.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -128,7 +131,7 @@
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
       <workItem from="1630410987258" duration="20831000" />
-      <workItem from="1630486908889" duration="9049000" />
+      <workItem from="1630486908889" duration="12640000" />
     </task>
     <servers />
   </component>

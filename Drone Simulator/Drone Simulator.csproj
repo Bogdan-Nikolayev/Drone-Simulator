@@ -61,6 +61,7 @@
         <Compile Include="Code\JavaScriptInterface.cs" />
         <Compile Include="Code\MainActivity.cs" />
         <Compile Include="Code\GrantedWebChromeClient.cs" />
+        <Compile Include="Code\UI\DeviceListAdapter.cs" />
         <Compile Include="Code\UI\DeviceListFragment.cs" />
         <Compile Include="Code\WifiDirect\IWifiDirectActivity.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectPeerListListener.cs" />
@@ -80,6 +81,7 @@
         </AndroidResource>
         <AndroidResource Include="Resources\layout\fragment_device_detail.xml" />
         <AndroidResource Include="Resources\layout\fragment_device_list.xml" />
+        <AndroidResource Include="Resources\layout\row_devices.xml" />
         <AndroidResource Include="Resources\mipmap\ic_launcher.png" />
         <AndroidResource Include="Resources\values\colors.xml" />
         <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
