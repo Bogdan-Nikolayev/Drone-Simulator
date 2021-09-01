@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:gravity="bottom">
+            android:layout_height="match_parent">
         <fragment
                 android:id="@+id/fragment_device_list"
                 class="Drone_Simulator.UI.DeviceListFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        <Button
-                android:text="Discover Peers"
+                android:layout_height="0px"
+                android:layout_weight="1"/>
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/discoverPeersButton"/>
-        <Button
-                android:text="Open WebView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/openWebViewButton"/>
+                android:layout_height="wrap_content">
+            <Button
+                    android:text="Discover Peers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_discover_peers"/>
+            <Button
+                    android:text="Open WebView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_open_web_view"/>
+        </LinearLayout>
     </LinearLayout>
     <WebView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/webView"
+            android:id="@+id/web_view"
             android:elevation="10px"
             android:visibility="invisible">
     </WebView>

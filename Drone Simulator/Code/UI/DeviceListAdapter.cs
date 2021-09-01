@@ -28,12 +28,12 @@ namespace Drone_Simulator.UI
 
         public override View? GetView(int position, View? convertView, ViewGroup? parent)
         {
-            View view = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.row_devices, null);
+            View view = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.item_device_list, null);
 
             WifiP2pDevice device = _devices[position];
 
-            view.FindViewById<TextView>(Resource.Id.device_name).Text = device.DeviceName;
-            view.FindViewById<TextView>(Resource.Id.device_details).Text = device.Status.ToString();
+            view.FindViewById<TextView>(Resource.Id.text_device_name).Text = device.DeviceName;
+            view.FindViewById<TextView>(Resource.Id.text_device_status).Text = device.Status.ToString();
 
             return view;
         }

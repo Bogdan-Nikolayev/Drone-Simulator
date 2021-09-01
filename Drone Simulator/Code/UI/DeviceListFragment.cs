@@ -8,6 +8,7 @@ using Drone_Simulator.WifiDirect;
 
 namespace Drone_Simulator.UI
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class DeviceListFragment : ListFragment
     {
         private readonly List<WifiP2pDevice> devices = new List<WifiP2pDevice>();
@@ -35,10 +36,14 @@ namespace Drone_Simulator.UI
 
         private void Fill(WifiP2pDeviceList peers)
         {
-            // TODO: Populate list.
             foreach (WifiP2pDevice device in peers.DeviceList)
                 Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
                     nameof(DeviceListFragment), nameof(Fill), device.DeviceName));
+            
+            devices.Clear();
+            devices.AddRange(peers.DeviceList);
+
+            ((DeviceListAdapter)ListAdapter).NotifyDataSetChanged();
         }
     }
 }

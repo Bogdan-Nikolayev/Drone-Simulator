@@ -79,10 +79,8 @@
         <AndroidResource Include="Resources\layout\activity_main.axml">
             <SubType>Designer</SubType>
         </AndroidResource>
-        <AndroidResource Include="Resources\layout\fragment_device_detail.xml" />
         <AndroidResource Include="Resources\layout\fragment_device_list.xml" />
-        <AndroidResource Include="Resources\layout\row_devices.xml" />
-        <AndroidResource Include="Resources\mipmap\ic_launcher.png" />
+        <AndroidResource Include="Resources\layout\item_device_list.xml" />
         <AndroidResource Include="Resources\values\colors.xml" />
         <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
         <AndroidResource Include="Resources\values\strings.xml" />

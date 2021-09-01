@@ -94,16 +94,16 @@ namespace Drone_Simulator
 
         private void SubscribeToViewEvents()
         {
-            Button discoverPeersButton = FindViewById<Button>(Resource.Id.discoverPeersButton);
+            Button discoverPeersButton = FindViewById<Button>(Resource.Id.button_discover_peers);
             discoverPeersButton.Click += (sender, args) => DiscoverPeers();
 
-            Button openWebViewButton = FindViewById<Button>(Resource.Id.openWebViewButton);
+            Button openWebViewButton = FindViewById<Button>(Resource.Id.button_open_web_view);
             openWebViewButton.Click += (sender, args) => OpenWebView();
         }
 
         private void OpenWebView()
         {
-            WebView webView = FindViewById<WebView>(Resource.Id.webView);
+            WebView webView = FindViewById<WebView>(Resource.Id.web_view);
 
             webView.Settings.JavaScriptEnabled = true;
             // Add C# adapter to JavaScript.
