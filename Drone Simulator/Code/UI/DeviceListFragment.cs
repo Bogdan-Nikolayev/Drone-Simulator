@@ -30,7 +30,7 @@ namespace Drone_Simulator.UI
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
-            
+
             return inflater.Inflate(Resource.Layout.fragment_device_list, null);
         }
 
@@ -39,7 +39,7 @@ namespace Drone_Simulator.UI
             foreach (WifiP2pDevice device in peers.DeviceList)
                 Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
                     nameof(DeviceListFragment), nameof(Fill), device.DeviceName));
-            
+
             devices.Clear();
             devices.AddRange(peers.DeviceList);
 

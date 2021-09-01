@@ -1,10 +1,11 @@
 ﻿using Android.Util;
 using Android.Webkit;
 using Java.Interop;
+using Java.Lang;
 
 namespace Drone_Simulator
 {
-    public class JavaScriptInterface : Java.Lang.Object
+    public class JavaScriptInterface : Object
     {
         [Export]
         [JavascriptInterface]
