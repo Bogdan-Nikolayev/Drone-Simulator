@@ -101,6 +101,8 @@ namespace Drone_Simulator
             WebView webView = FindViewById<WebView>(Resource.Id.webView);
 
             webView.Settings.JavaScriptEnabled = true;
+            // Add C# adapter to JavaScript.
+            webView.AddJavascriptInterface(new JavaScriptInterface(), "android");
             // Provide the required permissions.
             webView.SetWebChromeClient(new GrantedWebChromeClient());
 

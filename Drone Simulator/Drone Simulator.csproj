@@ -53,12 +53,15 @@
         <Reference Include="System.Xml" />
         <Reference Include="System.Core" />
         <Reference Include="Mono.Android" />
+        <Reference Include="Mono.Android.Export" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Code\Constants.cs" />
         <Compile Include="Code\Extensions\ActivityExtensions.cs" />
+        <Compile Include="Code\JavaScriptInterface.cs" />
         <Compile Include="Code\MainActivity.cs" />
         <Compile Include="Code\GrantedWebChromeClient.cs" />
+        <Compile Include="Code\UI\DeviceListFragment.cs" />
         <Compile Include="Code\WifiDirect\IWifiDirectActivity.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectPeerListListener.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectActionListener.cs" />
@@ -75,6 +78,9 @@
         <AndroidResource Include="Resources\layout\activity_main.axml">
             <SubType>Designer</SubType>
         </AndroidResource>
+        <AndroidResource Include="Resources\layout\fragment_device_detail.xml" />
+        <AndroidResource Include="Resources\layout\fragment_device_list.xml" />
+        <AndroidResource Include="Resources\mipmap\ic_launcher.png" />
         <AndroidResource Include="Resources\values\colors.xml" />
         <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
         <AndroidResource Include="Resources\values\strings.xml" />

@@ -6,7 +6,6 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="DroneSimulator" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -24,14 +23,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="layoutResourceFile" />
+        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/ee/41f89d8f/PermissionRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FEFEE6C2-C695-4590-88A9-DF092723E052/3c/e4a44acb/FragmentActivity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/8e/fe12a2bc/JavascriptInterfaceAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/e7/6b36183e/Permission.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58DCCD53-33A7-48CA-8E43-8A2C600C06D9/0c/f1839582/AppCompatActivity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/57/86895abc/WebView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4124E740-F7CA-4DC6-ABF7-FC366FB2D9CA/78/8935a79d/ContextCompat.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/2b/2e584d93/WebChromeClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/3e/d3b7b2d5/WifiP2pDeviceList.cs" root0="SKIP_HIGHLIGHTING" />
@@ -60,10 +63,15 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebChromeClientWithCamera.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe-ar-nft.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Constants.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe.min.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Constants.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Drone Simulator.csproj" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListFragment.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_list.xml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_detail.xml" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -119,7 +127,8 @@
       <workItem from="1630336686277" duration="3457000" />
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
-      <workItem from="1630410987258" duration="20384000" />
+      <workItem from="1630410987258" duration="20831000" />
+      <workItem from="1630486908889" duration="9049000" />
     </task>
     <servers />
   </component>
