@@ -9,12 +9,13 @@ using Android.Views;
 using Android.Webkit;
 using Android.Widget;
 using Drone_Simulator.Extensions;
+using Drone_Simulator.UI;
 using Drone_Simulator.WifiDirect;
 
 namespace Drone_Simulator
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, IWifiDirectActivity
+    public class MainActivity : AppCompatActivity, IWifiDirectHandler
     {
         private readonly IntentFilter _intentFilter = new IntentFilter();
 
@@ -23,6 +24,7 @@ namespace Drone_Simulator
         private WifiDirectBroadcastReceiver _receiver;
 
         public bool IsWifiDirectEnabled { get; set; }
+        public WifiDirectPeerListListener PeerListListener { get; private set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,6 +35,9 @@ namespace Drone_Simulator
             RequestPermissions();
             // Set our view from the "main" layout resource.
             SetContentView(Resource.Layout.activity_main);
+            PeerListListener =
+                ((DeviceListFragment)SupportFragmentManager.FindFragmentById(Resource.Id.fragment_device_list))
+                .Listener;
 
             SetupIntentFilter();
             _manager = (WifiP2pManager)GetSystemService(WifiP2pService);

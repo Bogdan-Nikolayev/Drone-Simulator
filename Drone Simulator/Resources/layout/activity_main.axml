@@ -8,6 +8,11 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:gravity="bottom">
+        <fragment
+                android:id="@+id/fragment_device_list"
+                class="Drone_Simulator.UI.DeviceListFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         <Button
                 android:text="Discover Peers"
                 android:layout_width="match_parent"

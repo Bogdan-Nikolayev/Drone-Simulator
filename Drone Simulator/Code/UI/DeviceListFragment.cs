@@ -2,6 +2,7 @@
 using Android.Net.Wifi.P2p;
 using Android.OS;
 using Android.Support.V4.App;
+using Android.Util;
 using Android.Views;
 using Drone_Simulator.WifiDirect;
 
@@ -27,12 +28,17 @@ namespace Drone_Simulator.UI
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            base.OnCreateView(inflater, container, savedInstanceState);
+            
             return inflater.Inflate(Resource.Layout.fragment_device_list, null);
         }
 
         private void Fill(WifiP2pDeviceList peers)
         {
-            throw new System.NotImplementedException();
+            // TODO: Populate list.
+            foreach (WifiP2pDevice device in peers.DeviceList)
+                Log.Debug(Constants.Tag.DroneSimulator, string.Join(" ",
+                    nameof(DeviceListFragment), nameof(Fill), device.DeviceName));
         }
     }
 }

@@ -48,13 +48,10 @@
       <option value="$PROJECT_DIR$/Drone Simulator/PeerListActionListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/PeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
       <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/PeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities/PermissionsUtility.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities/Permissions.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Extensions/ActivityExtensions.cs" />
@@ -66,7 +63,6 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe.min.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Constants.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Drone Simulator.csproj" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_list.xml" />
@@ -74,7 +70,12 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/row_devices.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListAdapter.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListFragment.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectHandler.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -85,7 +86,6 @@
   <component name="ProjectId" id="1xS5e23xbmz1qnX7VwBiBKC4SDG" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
-    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -131,7 +131,7 @@
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
       <workItem from="1630410987258" duration="20831000" />
-      <workItem from="1630486908889" duration="12640000" />
+      <workItem from="1630486908889" duration="15500000" />
     </task>
     <servers />
   </component>
