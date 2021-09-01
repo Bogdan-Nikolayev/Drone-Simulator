@@ -12,21 +12,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"/>
-        <LinearLayout
-                android:orientation="vertical"
+        <Button
+                android:text="Open WebView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <Button
-                    android:text="Discover Peers"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/button_discover_peers"/>
-            <Button
-                    android:text="Open WebView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/button_open_web_view"/>
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/button_open_web_view"/>
     </LinearLayout>
     <WebView
             android:layout_width="match_parent"

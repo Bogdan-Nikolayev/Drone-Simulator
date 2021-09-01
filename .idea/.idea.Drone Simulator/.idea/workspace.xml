@@ -77,7 +77,6 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
@@ -90,6 +89,9 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectDeviceListAdapter.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_wifi_direct.xml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectActionListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -105,7 +107,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R52M80PQ5FF" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-01T19:41:26.723307800Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-01T20:03:09.899737300Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="STRING" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -145,7 +147,7 @@
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
       <workItem from="1630410987258" duration="20831000" />
-      <workItem from="1630486908889" duration="26283000" />
+      <workItem from="1630486908889" duration="27294000" />
     </task>
     <servers />
   </component>

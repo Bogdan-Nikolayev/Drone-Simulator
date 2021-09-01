@@ -6,5 +6,11 @@
     <ListView
             android:id="@id/android:list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_weight="1"
+            android:layout_height="0px"/>
+    <Button
+            android:text="Discover Peers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_discover_peers"/>
 </LinearLayout>
