@@ -76,10 +76,13 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_list.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/row_devices.xml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListAdapter.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/item_device_list.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/WifiDirectFragment.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirectFragment.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -135,7 +138,7 @@
       <workItem from="1630340715247" duration="4069000" />
       <workItem from="1630344986243" duration="101000" />
       <workItem from="1630410987258" duration="20831000" />
-      <workItem from="1630486908889" duration="21078000" />
+      <workItem from="1630486908889" duration="22959000" />
     </task>
     <servers />
   </component>

@@ -3815,7 +3815,7 @@ namespace Drone_Simulator
 			public const int design_text_input_password_icon = 2131427370;
 			
 			// aapt resource value: 0x7F0B002B
-			public const int fragment_device_list = 2131427371;
+			public const int fragment_wifi_direct = 2131427371;
 			
 			// aapt resource value: 0x7F0B002C
 			public const int item_device_list = 2131427372;

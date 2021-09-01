@@ -62,8 +62,9 @@
         <Compile Include="Code\MainActivity.cs" />
         <Compile Include="Code\GrantedWebChromeClient.cs" />
         <Compile Include="Code\UI\DeviceListAdapter.cs" />
-        <Compile Include="Code\UI\DeviceListFragment.cs" />
+        <Compile Include="Code\Log.cs" />
         <Compile Include="Code\WifiDirect\IWifiDirectHandler.cs" />
+        <Compile Include="Code\WifiDirect\WifiDirectFragment.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectPeerListListener.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectActionListener.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectBroadcastReceiver.cs" />
@@ -79,7 +80,7 @@
         <AndroidResource Include="Resources\layout\activity_main.axml">
             <SubType>Designer</SubType>
         </AndroidResource>
-        <AndroidResource Include="Resources\layout\fragment_device_list.xml" />
+        <AndroidResource Include="Resources\layout\fragment_wifi_direct.xml" />
         <AndroidResource Include="Resources\layout\item_device_list.xml" />
         <AndroidResource Include="Resources\values\colors.xml" />
         <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
