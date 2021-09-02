@@ -9,9 +9,9 @@ namespace Drone_Simulator.Browser
         [Export]
         [JavascriptInterface]
         // ReSharper disable once UnusedMember.Global
-        public void ReceiveData(string data)
+        public void SendOffer(string offer)
         {
-            Log.Debug(data);
+            Log.Debug(offer);
         }
     }
 }

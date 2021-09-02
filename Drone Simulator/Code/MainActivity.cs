@@ -50,7 +50,8 @@ namespace Drone_Simulator
             // Provide the required permissions.
             webView.SetWebChromeClient(new GrantedWebChromeClient());
 
-            webView.LoadUrl("file:///android_asset/ar/ar-js-location.html");
+            // webView.LoadUrl("file:///android_asset/ar/ar.html");
+            webView.LoadUrl("file:///android_asset/ar/video-recorder.html");
             webView.Visibility = ViewStates.Visible;
         }
     }
