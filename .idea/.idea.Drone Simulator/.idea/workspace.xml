@@ -6,7 +6,6 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="dronesi" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -47,9 +46,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Drone Simulator/PeerListListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/WifiDirectBroadcastReceiver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/PeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities/PermissionsUtility.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities/Permissions.cs" />
@@ -65,7 +61,6 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_detail.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectActivity.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectHandler.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceDetailsFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_list.xml" />
@@ -77,11 +72,9 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Log.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/DeviceListAdapter.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebView/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectDeviceListAdapter.cs" />
@@ -97,7 +90,13 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-recorder.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/css/video-recorder.css" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/video-recorder.html" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectPeerListListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectConnectionInfoListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectHandler.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -155,7 +154,7 @@
       <workItem from="1630344986243" duration="101000" />
       <workItem from="1630410987258" duration="20831000" />
       <workItem from="1630486908889" duration="27554000" />
-      <workItem from="1630584340343" duration="5102000" />
+      <workItem from="1630584340343" duration="10524000" />
     </task>
     <servers />
   </component>

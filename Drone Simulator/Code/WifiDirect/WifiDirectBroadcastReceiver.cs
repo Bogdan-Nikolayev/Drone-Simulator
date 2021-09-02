@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.Net;
 using Android.Net.Wifi.P2p;
 
 namespace Drone_Simulator.WifiDirect
@@ -40,6 +41,11 @@ namespace Drone_Simulator.WifiDirect
                     break;
                 case WifiP2pManager.WifiP2pConnectionChangedAction:
                     // Respond to new connection or disconnections.
+                    NetworkInfo networkInfo = (NetworkInfo)intent.GetParcelableExtra(WifiP2pManager.ExtraNetworkInfo);
+                    if (networkInfo.IsConnected)
+                        // We are connected with the other device, request connection
+                        // info to find group owner IP.
+                        _manager.RequestConnectionInfo(_channel, _handler.ConnectionInfoListener);
                     break;
                 case WifiP2pManager.WifiP2pThisDeviceChangedAction:
                     // Respond to this device's wifi state changing.

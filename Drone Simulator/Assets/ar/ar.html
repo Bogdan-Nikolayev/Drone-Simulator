@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>AR</title>
     <script src="js/aframe.min.js"></script>
-    <script src="js/aframe-look-at-component.min.js"></script>
     <script src="js/aframe-ar-nft.js"></script>
   </head>
 
@@ -17,8 +16,7 @@
     >
       <a-text
         value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="120 120 120"
+        scale="5 5 5"
         gps-entity-place="latitude: 49.97394826811293; longitude: 36.25756246622523;"
       ></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>

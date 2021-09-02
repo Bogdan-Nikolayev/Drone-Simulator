@@ -1,4 +1,6 @@
-﻿using Drone_Simulator.WifiDirect.Listeners;
+﻿using System;
+using Android.Net.Wifi.P2p;
+using Drone_Simulator.WifiDirect.Listeners;
 
 namespace Drone_Simulator.WifiDirect
 {
@@ -6,5 +8,8 @@ namespace Drone_Simulator.WifiDirect
     {
         public bool IsWifiDirectEnabled { get; set; }
         public WifiDirectPeerListListener PeerListListener { get; }
+        public WifiDirectConnectionInfoListener ConnectionInfoListener { get; }
+
+        public event Action<WifiP2pInfo> Connected;
     }
 }

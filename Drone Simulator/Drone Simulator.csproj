@@ -63,6 +63,7 @@
         <Compile Include="Code\Browser\GrantedWebChromeClient.cs" />
         <Compile Include="Code\Browser\JavaScriptInterface.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectActionListener.cs" />
+        <Compile Include="Code\WifiDirect\Listeners\WifiDirectConnectionInfoListener.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectPeerListListener.cs" />
         <Compile Include="Code\WifiDirect\WifiDirectDeviceListAdapter.cs" />
         <Compile Include="Code\WifiDirect\IWifiDirectHandler.cs" />

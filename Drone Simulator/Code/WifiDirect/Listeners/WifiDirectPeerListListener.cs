@@ -14,6 +14,9 @@ namespace Drone_Simulator.WifiDirect.Listeners
 
         public void OnPeersAvailable(WifiP2pDeviceList? peers)
         {
+            foreach (WifiP2pDevice device in peers.DeviceList)
+                Log.Debug(device.DeviceName);
+
             _onPeersAvailable?.Invoke(peers);
         }
     }

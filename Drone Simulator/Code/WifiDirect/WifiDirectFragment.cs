@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.Content;
 using Android.Net.Wifi.P2p;
 using Android.OS;
@@ -21,14 +22,19 @@ namespace Drone_Simulator.WifiDirect
         public WifiDirectFragment()
         {
             PeerListListener = new WifiDirectPeerListListener(FillList);
+            ConnectionInfoListener = new WifiDirectConnectionInfoListener(HandleConnection);
         }
 
         public bool IsWifiDirectEnabled { get; set; }
         public WifiDirectPeerListListener PeerListListener { get; }
+        public WifiDirectConnectionInfoListener ConnectionInfoListener { get; }
+
+        public event Action<WifiP2pInfo> Connected;
 
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
+            Log.Debug();
 
             _manager = (WifiP2pManager)Activity.GetSystemService(Context.WifiP2pService);
             _channel = _manager.Initialize(Activity, Looper.MainLooper, null);
@@ -49,7 +55,6 @@ namespace Drone_Simulator.WifiDirect
         public override void OnResume()
         {
             base.OnResume();
-
             Log.Debug();
 
             // Register the BroadcastReceiver with the intent values to be matched.
@@ -59,7 +64,6 @@ namespace Drone_Simulator.WifiDirect
         public override void OnPause()
         {
             base.OnPause();
-
             Log.Debug();
 
             Activity.UnregisterReceiver(_receiver);
@@ -81,24 +85,54 @@ namespace Drone_Simulator.WifiDirect
         {
             Button discoverPeersButton = Activity.FindViewById<Button>(Resource.Id.button_discover_peers);
             discoverPeersButton.Click += (sender, args) => DiscoverPeers();
+
+            ListView devicesList = Activity.FindViewById<ListView>(Android.Resource.Id.List);
+            devicesList.ItemClick += (sender, args) => Connect(_devices[args.Position]);
         }
 
         private void DiscoverPeers()
         {
             Log.Debug();
 
-            _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
+            // Disconnect if already connected.
+            _manager.CancelConnect(_channel, new WifiDirectActionListener(
+                () =>
+                {
+                    Log.Debug();
+
+                    _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
+                },
+                reason =>
+                {
+                    Log.Debug(reason);
+
+                    _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
+                }));
+        }
+
+        private void Connect(WifiP2pDevice device)
+        {
+            Log.Debug();
+
+            WifiP2pConfig config = new WifiP2pConfig
+            {
+                DeviceAddress = device.DeviceAddress
+            };
+
+            _manager.Connect(_channel, config, new WifiDirectActionListener(null, null));
         }
 
         private void FillList(WifiP2pDeviceList peers)
         {
-            foreach (WifiP2pDevice device in peers.DeviceList)
-                Log.Debug(device.DeviceName);
-
             _devices.Clear();
             _devices.AddRange(peers.DeviceList);
 
             ((WifiDirectDeviceListAdapter)ListAdapter).NotifyDataSetChanged();
+        }
+
+        private void HandleConnection(WifiP2pInfo info)
+        {
+            Connected?.Invoke(info);
         }
     }
 }

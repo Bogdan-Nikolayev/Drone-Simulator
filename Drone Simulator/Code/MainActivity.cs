@@ -1,5 +1,6 @@
 ﻿using Android;
 using Android.App;
+using Android.Net.Wifi.P2p;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
@@ -14,7 +15,7 @@ namespace Drone_Simulator
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        private WifiDirectFragment _fragment;
+        private IWifiDirectHandler _wifiDirect;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -23,8 +24,6 @@ namespace Drone_Simulator
             RequestPermissions();
             SetContentView(Resource.Layout.activity_main);
             SubscribeToViewEvents();
-
-            _fragment = (WifiDirectFragment)SupportFragmentManager.FindFragmentById(Resource.Id.fragment_wifi_direct);
         }
 
         private void RequestPermissions()
@@ -37,10 +36,18 @@ namespace Drone_Simulator
         private void SubscribeToViewEvents()
         {
             Button openWebViewButton = FindViewById<Button>(Resource.Id.button_open_web_view);
-            openWebViewButton.Click += (sender, args) => OpenWebView();
+            openWebViewButton.Click += (sender, args) => OpenWebView("ar.html");
+
+            _wifiDirect = (WifiDirectFragment)SupportFragmentManager.FindFragmentById(Resource.Id.fragment_wifi_direct);
+            _wifiDirect.Connected += OpenWebView;
         }
 
-        private void OpenWebView()
+        private void OpenWebView(WifiP2pInfo info)
+        {
+            OpenWebView(info.IsGroupOwner ? "ar.html" : "video-recorder.html");
+        }
+
+        private void OpenWebView(string htmlPage)
         {
             WebView webView = FindViewById<WebView>(Resource.Id.web_view);
 
@@ -50,8 +57,7 @@ namespace Drone_Simulator
             // Provide the required permissions.
             webView.SetWebChromeClient(new GrantedWebChromeClient());
 
-            // webView.LoadUrl("file:///android_asset/ar/ar.html");
-            webView.LoadUrl("file:///android_asset/ar/video-recorder.html");
+            webView.LoadUrl("file:///android_asset/ar/" + htmlPage);
             webView.Visibility = ViewStates.Visible;
         }
     }
