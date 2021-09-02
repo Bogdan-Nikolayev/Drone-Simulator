@@ -4,7 +4,7 @@ using Java.Lang;
 
 namespace Drone_Simulator.Browser
 {
-    public class JavaScriptInterface : Object
+    public class JavaScriptWebRtcInterface : Object
     {
         [Export]
         [JavascriptInterface]

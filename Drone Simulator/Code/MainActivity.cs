@@ -9,6 +9,9 @@ using Android.Widget;
 using Drone_Simulator.Browser;
 using Drone_Simulator.Extensions;
 using Drone_Simulator.WifiDirect;
+using Java.IO;
+using Java.Lang;
+using Java.Net;
 
 namespace Drone_Simulator
 {
@@ -44,6 +47,16 @@ namespace Drone_Simulator
 
         private void OpenWebView(WifiP2pInfo info)
         {
+            Socket socket;
+            
+            // Networking code should execute not from main thread due to:
+            // android.os.NetworkOnMainThreadException
+            Thread thread = new Thread(new Runnable(() =>
+            {
+
+            }));
+            thread.Start();
+
             OpenWebView(info.IsGroupOwner ? "ar.html" : "video-recorder.html");
         }
 
@@ -53,7 +66,7 @@ namespace Drone_Simulator
 
             webView.Settings.JavaScriptEnabled = true;
             // Add C# adapter to JavaScript.
-            webView.AddJavascriptInterface(new JavaScriptInterface(), "android");
+            webView.AddJavascriptInterface(new JavaScriptWebRtcInterface(), "android");
             // Provide the required permissions.
             webView.SetWebChromeClient(new GrantedWebChromeClient());
 

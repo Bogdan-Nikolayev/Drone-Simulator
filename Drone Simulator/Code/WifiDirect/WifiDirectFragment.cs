@@ -6,6 +6,7 @@ using Android.OS;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
+using Drone_Simulator.Extensions;
 using Drone_Simulator.WifiDirect.Listeners;
 
 namespace Drone_Simulator.WifiDirect
@@ -22,7 +23,7 @@ namespace Drone_Simulator.WifiDirect
         public WifiDirectFragment()
         {
             PeerListListener = new WifiDirectPeerListListener(FillList);
-            ConnectionInfoListener = new WifiDirectConnectionInfoListener(HandleConnection);
+            ConnectionInfoListener = new WifiDirectConnectionInfoListener(info => Connected?.Invoke(info));
         }
 
         public bool IsWifiDirectEnabled { get; set; }
@@ -43,6 +44,7 @@ namespace Drone_Simulator.WifiDirect
 
             SetupIntentFilter();
             SubscribeToViewEvents();
+            _manager.RemoveGroupIfExist(_channel, () => { Log.Debug("Group cleared"); });
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -95,19 +97,8 @@ namespace Drone_Simulator.WifiDirect
             Log.Debug();
 
             // Disconnect if already connected.
-            _manager.CancelConnect(_channel, new WifiDirectActionListener(
-                () =>
-                {
-                    Log.Debug();
-
-                    _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
-                },
-                reason =>
-                {
-                    Log.Debug(reason);
-
-                    _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
-                }));
+            _manager.RemoveGroupIfExist(_channel, () =>
+                _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null)));
         }
 
         private void Connect(WifiP2pDevice device)
@@ -128,11 +119,6 @@ namespace Drone_Simulator.WifiDirect
             _devices.AddRange(peers.DeviceList);
 
             ((WifiDirectDeviceListAdapter)ListAdapter).NotifyDataSetChanged();
-        }
-
-        private void HandleConnection(WifiP2pInfo info)
-        {
-            Connected?.Invoke(info);
         }
     }
 }

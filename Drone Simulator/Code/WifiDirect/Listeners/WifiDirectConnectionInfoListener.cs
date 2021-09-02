@@ -14,7 +14,7 @@ namespace Drone_Simulator.WifiDirect.Listeners
 
         public void OnConnectionInfoAvailable(WifiP2pInfo? info)
         {
-            Log.Debug("IsGroupOwner: " + info.IsGroupOwner);
+            Log.Debug(info);
 
             _onConnectionInfoAvailable?.Invoke(info);
         }

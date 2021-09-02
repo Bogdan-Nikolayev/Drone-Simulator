@@ -26,6 +26,7 @@
         <option value="layoutResourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="HTML File" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -46,24 +47,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/PeerListListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities/PermissionsUtility.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities/Permissions.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Extensions/ActivityExtensions.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Tag.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/values/strings.xml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Properties/AndroidManifest.xml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebChromeClientWithCamera.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe-ar-nft.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/aframe.min.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Constants.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Drone Simulator.csproj" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_detail.xml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar-js-location.html" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectActivity.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceDetailsFragment.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListFragment.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_device_list.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/row_devices.xml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/DeviceListAdapter.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/item_device_list.xml" />
@@ -91,11 +74,29 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/css/video-recorder.css" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/video-recorder.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectPeerListListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectConnectionInfoListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectHandler.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectConnectionInfoListener - Copy.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectGroupInfoListener.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/AsyncSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Extensions/WifiDirectExtensions.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptWebRtcInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectConnectionInfoListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectSocketConnection.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Socket/WifiDirectSocketConnection.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Socket/WifiDirectServerSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Socket/ISocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Socket/WifiDirectClientSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Sockets/ISocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Sockets/WifiDirectServerSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Sockets/WifiDirectClientSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/WifiDirectClientSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ClientSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/WifiDirectServerSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
     </changedPaths>
   </component>
@@ -112,14 +113,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R52M80PQ5FF" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-01T20:03:09.899737300Z" />
-    <property name="ResourceManagerPrefKey.ResourceType" value="STRING" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9b15498" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-02T17:25:51.162328300Z" />
+    <property name="ResourceManagerPrefKey.ResourceType" value="INTEGER" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectConnectionInfoListener.cs" />
   </component>
   <component name="RunManager" selected="Xamarin.Android.Drone Simulator">
     <configuration name="ar-js-location.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Drone Simulator/Drone Simulator/Assets/ar/ar-js-location.html" useBuiltInWebServerPort="true">
@@ -154,7 +156,7 @@
       <workItem from="1630344986243" duration="101000" />
       <workItem from="1630410987258" duration="20831000" />
       <workItem from="1630486908889" duration="27554000" />
-      <workItem from="1630584340343" duration="10524000" />
+      <workItem from="1630584340343" duration="22370000" />
     </task>
     <servers />
   </component>
