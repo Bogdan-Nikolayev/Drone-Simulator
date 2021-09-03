@@ -59,7 +59,7 @@ namespace Drone_Simulator
                 else
                     socket = new ClientSocket(info.GroupOwnerAddress, port);
 
-                RunOnUiThread(() => OpenWebView(info.IsGroupOwner ? "ar.html" : "video-recorder.html", socket));
+                RunOnUiThread(() => OpenWebView(info.IsGroupOwner ? "video-recorder.html" : "ar.html", socket));
             }));
             thread.Start();
         }

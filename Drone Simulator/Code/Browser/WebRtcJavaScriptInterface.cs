@@ -22,6 +22,9 @@ namespace Drone_Simulator.Browser
                     case WebRtcMessageType.Offer:
                         ReceiveOffer(message);
                         break;
+                    case WebRtcMessageType.Answer:
+                        ReceiveAnswer(message);
+                        break;
                 }
             };
         }
@@ -31,14 +34,29 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendOffer(string offer)
         {
-            Log.Debug("Sending offer" + offer);
+            Log.Debug("Sending offer (CSharp)" + offer);
 
             _signalingSocket.SendString((sbyte)WebRtcMessageType.Offer, offer);
         }
 
+        [Export]
+        [JavascriptInterface]
+        // ReSharper disable once UnusedMember.Global
+        public void SendAnswer(string answer)
+        {
+            Log.Debug("Sending answer (CSharp)" + answer);
+
+            _signalingSocket.SendString((sbyte)WebRtcMessageType.Answer, answer);
+        }
+
         public void ReceiveOffer(string offer)
         {
-            _webView.LoadUrl("javascript:receiveOffer(" + offer + ");");
+            _webView.LoadUrl("javascript:receiveOffer('" + offer + "');");
+        }
+
+        public void ReceiveAnswer(string answer)
+        {
+            _webView.LoadUrl("javascript:receiveAnswer('" + answer + "');");
         }
     }
 }

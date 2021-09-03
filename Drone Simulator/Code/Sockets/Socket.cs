@@ -1,4 +1,5 @@
-﻿using Android.OS;
+﻿using System.Text;
+using Android.OS;
 using Java.IO;
 using Java.Lang;
 
@@ -14,6 +15,7 @@ namespace Drone_Simulator.Sockets
         {
             using DataOutputStream stream = new DataOutputStream(_socket.OutputStream);
             stream.WriteByte(messageType);
+            stream.Flush();
             stream.WriteUTF(message);
             stream.Flush();
 
@@ -29,7 +31,7 @@ namespace Drone_Simulator.Sockets
                 {
                     sbyte messageType = stream.ReadByte();
                     string message = stream.ReadUTF();
-                    
+
                     // Run in UI thread.
                     new Handler(Looper.MainLooper).Post(() => StringReceived?.Invoke(messageType, message));
 

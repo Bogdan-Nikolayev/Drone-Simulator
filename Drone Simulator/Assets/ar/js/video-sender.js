@@ -3,15 +3,17 @@ let peerConnection = new RTCPeerConnection();
 navigator.mediaDevices
     .getUserMedia({video: {facingMode: "environment"}})
     .then(function (stream) {
-        let myVideo = document.getElementsByTagName("video")[0];
-        if (myVideo)
-            myVideo.srcObject = stream;
-        
+        let video = document.getElementsByTagName("video")[0];
+        if (video)
+            video.srcObject = stream;
+
         peerConnection.addTrack(stream.getVideoTracks()[0]);
         peerConnection.createOffer().then(
             function (offer) {
                 peerConnection.setLocalDescription(offer);
-                android.SendOffer(JSON.stringify(offer));
+                let string = JSON.stringify(offer);
+                android.SendOffer(string);
+                console.log("Reparse offer: " + JSON.parse(string))
             },
             function (err) {
                 alert(err.name + ": " + err.message);
@@ -23,6 +25,7 @@ navigator.mediaDevices
     });
 
 function receiveAnswer(answer) {
-    console.log("Receiving answer: " + answer);
-    peerConnection.setRemoteDescription(answer);
+    console.log("Received answer (JS): " + answer);
+
+    peerConnection.setRemoteDescription(JSON.parse(answer));
 }

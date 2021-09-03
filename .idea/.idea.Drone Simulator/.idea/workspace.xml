@@ -69,7 +69,6 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/css/video-recorder.css" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectPeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectHandler.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectConnectionInfoListener - Copy.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectGroupInfoListener.cs" />
@@ -93,16 +92,17 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-recorder.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcSignalingServer.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/video-recorder.html" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ISocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcMessageType.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ClientSocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -117,13 +117,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34950384" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9b15498" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-03T16:35:10.884535200Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R52M80PQ5FF" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-03T17:50:34.052037400Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="INTEGER" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="SolutionBuilderPresentationOptionsPageId" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectConnectionInfoListener.cs" />
@@ -162,7 +165,7 @@
       <workItem from="1630410987258" duration="20831000" />
       <workItem from="1630486908889" duration="27554000" />
       <workItem from="1630584340343" duration="22509000" />
-      <workItem from="1630666611013" duration="15265000" />
+      <workItem from="1630666611013" duration="19898000" />
     </task>
     <servers />
   </component>
