@@ -7,11 +7,23 @@ namespace Drone_Simulator.Browser
 {
     public class WebRtcJavaScriptInterface : Object
     {
+        private readonly WebView _webView;
         private readonly ISocket _signalingSocket;
 
-        public WebRtcJavaScriptInterface(ISocket signalingSocket)
+        public WebRtcJavaScriptInterface(WebView webView, ISocket signalingSocket)
         {
+            _webView = webView;
             _signalingSocket = signalingSocket;
+
+            _signalingSocket.StringReceived += (type, message) =>
+            {
+                switch ((WebRtcMessageType)type)
+                {
+                    case WebRtcMessageType.Offer:
+                        ReceiveOffer(message);
+                        break;
+                }
+            };
         }
 
         [Export]
@@ -21,7 +33,12 @@ namespace Drone_Simulator.Browser
         {
             Log.Debug("Sending offer" + offer);
 
-            _signalingSocket.SendString(offer);
+            _signalingSocket.SendString((sbyte)WebRtcMessageType.Offer, offer);
+        }
+
+        public void ReceiveOffer(string offer)
+        {
+            _webView.LoadUrl("javascript:receiveOffer(" + offer + ");");
         }
     }
 }

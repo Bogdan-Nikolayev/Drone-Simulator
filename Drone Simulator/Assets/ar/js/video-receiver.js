@@ -1,10 +1,12 @@
+﻿let peerConnection = new RTCPeerConnection();
+
 navigator.mediaDevices
     .getUserMedia({video: {facingMode: "environment"}})
     .then(function (stream) {
         let myVideo = document.getElementsByTagName("video")[0];
-        myVideo.srcObject = stream;
+        if (myVideo)
+            myVideo.srcObject = stream;
 
-        let peerConnection = new RTCPeerConnection();
         peerConnection.addTrack(stream.getVideoTracks()[0]);
         peerConnection.createOffer().then(
             function (offer) {
@@ -19,3 +21,8 @@ navigator.mediaDevices
     .catch(function (err) {
         alert(err.name + ": " + err.message);
     });
+
+function receiveAnswer(answer) {
+    console.log("Receiving answer: " + answer);
+    peerConnection.setRemoteDescription(answer);
+}

@@ -56,6 +56,7 @@
         <Reference Include="Mono.Android.Export" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Code\Browser\WebRtcMessageType.cs" />
         <Compile Include="Code\Constants.cs" />
         <Compile Include="Code\Extensions\ActivityExtensions.cs" />
         <Compile Include="Code\Extensions\WifiDirectExtensions.cs" />
@@ -66,6 +67,7 @@
         <Compile Include="Code\Sockets\ISocket.cs" />
         <Compile Include="Code\Sockets\ClientSocket.cs" />
         <Compile Include="Code\Sockets\ServerSocket.cs" />
+        <Compile Include="Code\Sockets\Socket.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectActionListener.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectGroupInfoListener.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectConnectionInfoListener.cs" />
@@ -102,7 +104,8 @@
       <AndroidAsset Include="Assets\ar\js\aframe-ar-nft.js" />
       <AndroidAsset Include="Assets\ar\js\aframe-look-at-component.min.js" />
       <AndroidAsset Include="Assets\ar\js\aframe.min.js" />
-      <AndroidAsset Include="Assets\ar\js\video-recorder.js" />
+      <AndroidAsset Include="Assets\ar\js\video-receiver.js" />
+      <AndroidAsset Include="Assets\ar\js\video-sender.js" />
       <AndroidAsset Include="Assets\ar\video-recorder.html" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

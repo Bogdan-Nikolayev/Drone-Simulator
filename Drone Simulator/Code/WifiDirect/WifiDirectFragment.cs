@@ -44,7 +44,6 @@ namespace Drone_Simulator.WifiDirect
 
             SetupIntentFilter();
             SubscribeToViewEvents();
-            _manager.RemoveGroupIfExist(_channel, () => { Log.Debug("Group cleared"); });
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -76,7 +75,7 @@ namespace Drone_Simulator.WifiDirect
             base.OnStop();
             Log.Debug();
 
-            Activity.UnregisterReceiver(_receiver);
+            _manager.RemoveGroupIfExist(_channel, () => { Log.Debug("Group cleared"); });
         }
 
         private void SetupIntentFilter()
@@ -103,10 +102,8 @@ namespace Drone_Simulator.WifiDirect
         private void DiscoverPeers()
         {
             Log.Debug();
-
-            // Disconnect if already connected.
-            _manager.RemoveGroupIfExist(_channel, () =>
-                _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null)));
+            
+            _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
         }
 
         private void Connect(WifiP2pDevice device)

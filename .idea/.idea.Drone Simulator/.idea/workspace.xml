@@ -22,11 +22,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="layoutResourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="HTML File" />
         <option value="valueResourceFile" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -52,11 +52,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/UI/WifiDirectFragment.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirectFragment.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Utilities.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/GrantedWebChromeClient.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Log.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/DeviceListAdapter.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
@@ -71,9 +66,7 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/web-rtc.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/web-rtc.html" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-recorder.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/css/video-recorder.css" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/video-recorder.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectPeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
@@ -94,14 +87,21 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Sockets/WifiDirectClientSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/WifiDirectClientSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/WifiDirectServerSocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ISocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptWebRtcInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ClientSocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectDeviceListAdapter.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Properties/AndroidManifest.xml" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-recorder.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcSignalingServer.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/video-recorder.html" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ISocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcMessageType.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ClientSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
     </changedPaths>
   </component>
@@ -119,7 +119,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9b15498" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-03T15:17:08.837070900Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-03T16:35:10.884535200Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="INTEGER" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -162,7 +162,7 @@
       <workItem from="1630410987258" duration="20831000" />
       <workItem from="1630486908889" duration="27554000" />
       <workItem from="1630584340343" duration="22509000" />
-      <workItem from="1630666611013" duration="10755000" />
+      <workItem from="1630666611013" duration="15265000" />
     </task>
     <servers />
   </component>
