@@ -7,12 +7,12 @@ namespace Drone_Simulator.Sockets
 {
     public class ServerSocket : ISocket, IDisposable
     {
-        private readonly Socket _clientSocket;
+        private readonly Socket _socket;
 
         public ServerSocket(int port)
         {
             Java.Net.ServerSocket serverSocket = new Java.Net.ServerSocket(port);
-            _clientSocket = serverSocket.Accept();
+            _socket = serverSocket.Accept();
 
             StartListening();
         }
@@ -21,7 +21,7 @@ namespace Drone_Simulator.Sockets
 
         public void SendString(string message)
         {
-            using DataOutputStream stream = new DataOutputStream(_clientSocket.OutputStream);
+            using DataOutputStream stream = new DataOutputStream(_socket.OutputStream);
             stream.WriteUTF(message);
             stream.Flush();
 
@@ -32,7 +32,7 @@ namespace Drone_Simulator.Sockets
         {
             Thread thread = new Thread(new Runnable(() =>
             {
-                using DataInputStream stream = new DataInputStream(_clientSocket.InputStream);
+                using DataInputStream stream = new DataInputStream(_socket.InputStream);
                 while (true)
                 {
                     string message = stream.ReadUTF();
@@ -46,7 +46,7 @@ namespace Drone_Simulator.Sockets
 
         public void Dispose()
         {
-            _clientSocket?.Dispose();
+            _socket?.Dispose();
         }
     }
 }

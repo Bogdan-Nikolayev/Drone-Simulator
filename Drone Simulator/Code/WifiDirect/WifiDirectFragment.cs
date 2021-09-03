@@ -71,6 +71,14 @@ namespace Drone_Simulator.WifiDirect
             Activity.UnregisterReceiver(_receiver);
         }
 
+        public override void OnStop()
+        {
+            base.OnStop();
+            Log.Debug();
+
+            Activity.UnregisterReceiver(_receiver);
+        }
+
         private void SetupIntentFilter()
         {
             // Indicates a change in the Wi-Fi P2P status.
@@ -105,6 +113,13 @@ namespace Drone_Simulator.WifiDirect
         {
             Log.Debug();
 
+            // TODO: Some error is thrown here that does not seem to interfere with the application (on Samsung Galaxy TAB S5e as a host).
+            // E/WifiP2pManager: java.lang.Throwable
+            // at android.net.wifi.p2p.WifiP2pManager.connect(WifiP2pManager.java:1614)
+            // at mono.android.widget.AdapterView_OnItemClickListenerImplementor.n_onItemClick(Native Method)
+            // at mono.android.widget.AdapterView_OnItemClickListenerImplementor.onItemClick(AdapterView_OnItemClickListenerImplementor.java:30)
+            // at android.widget.AdapterView.performItemClick(AdapterView.java:376)
+            // at android.widget.AbsListView.performItemClick(AbsListView.java:1295)
             WifiP2pConfig config = new WifiP2pConfig
             {
                 DeviceAddress = device.DeviceAddress

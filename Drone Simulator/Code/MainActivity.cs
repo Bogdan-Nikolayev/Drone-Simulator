@@ -47,7 +47,7 @@ namespace Drone_Simulator
 
         private void ConnectSocketsAndOpenWebView(WifiP2pInfo info)
         {
-            ISocket socket = null;
+            ISocket socket;
             const int port = 8888;
 
             // Networking code should execute not from main thread due to:
@@ -58,10 +58,10 @@ namespace Drone_Simulator
                     socket = new ServerSocket(port);
                 else
                     socket = new ClientSocket(info.GroupOwnerAddress, port);
+
+                RunOnUiThread(() => OpenWebView(info.IsGroupOwner ? "ar.html" : "video-recorder.html", socket));
             }));
             thread.Start();
-
-            OpenWebView(info.IsGroupOwner ? "ar.html" : "video-recorder.html", socket);
         }
 
         private void OpenWebView(string htmlPage, ISocket socket)
