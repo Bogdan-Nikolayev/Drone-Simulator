@@ -1,18 +1,17 @@
 ﻿using System;
-using Android.Net.Wifi.P2p;
-using Drone_Simulator.WifiDirect.Sockets;
 using Java.IO;
+using Java.Lang;
 using Java.Net;
 
 namespace Drone_Simulator.Sockets
 {
-    public class ServerSocket : ISocket
+    public class ServerSocket : ISocket, IDisposable
     {
-        private Socket _clientSocket;
+        private readonly Socket _clientSocket;
 
-        public ServerSocket(WifiP2pInfo info)
+        public ServerSocket(int port)
         {
-            Java.Net.ServerSocket serverSocket = new Java.Net.ServerSocket(8888, 1);
+            Java.Net.ServerSocket serverSocket = new Java.Net.ServerSocket(port);
             _clientSocket = serverSocket.Accept();
 
             StartListening();
@@ -22,16 +21,32 @@ namespace Drone_Simulator.Sockets
 
         public void SendString(string message)
         {
-            throw new NotImplementedException();
+            using DataOutputStream stream = new DataOutputStream(_clientSocket.OutputStream);
+            stream.WriteUTF(message);
+            stream.Flush();
+
+            Log.Debug("Sent: " + message);
         }
 
         private void StartListening()
         {
-            while (true)
+            Thread thread = new Thread(new Runnable(() =>
             {
-                DataInputStream stream = new DataInputStream(_clientSocket.InputStream);
-                StringReceived?.Invoke(stream.ReadUTF());
-            }
+                using DataInputStream stream = new DataInputStream(_clientSocket.InputStream);
+                while (true)
+                {
+                    string message = stream.ReadUTF();
+                    StringReceived?.Invoke(message);
+
+                    Log.Debug("Received: " + message);
+                }
+            }));
+            thread.Start();
+        }
+
+        public void Dispose()
+        {
+            _clientSocket?.Dispose();
         }
     }
 }

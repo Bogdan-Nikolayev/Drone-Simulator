@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Drone_Simulator.WifiDirect.Sockets
+namespace Drone_Simulator.Sockets
 {
     public interface ISocket
     {

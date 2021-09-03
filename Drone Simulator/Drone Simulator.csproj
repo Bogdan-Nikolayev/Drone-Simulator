@@ -62,7 +62,7 @@
         <Compile Include="Code\MainActivity.cs" />
         <Compile Include="Code\Log.cs" />
         <Compile Include="Code\Browser\GrantedWebChromeClient.cs" />
-        <Compile Include="Code\Browser\JavaScriptWebRtcInterface.cs" />
+        <Compile Include="Code\Browser\WebRtcJavaScriptInterface.cs" />
         <Compile Include="Code\Sockets\ISocket.cs" />
         <Compile Include="Code\Sockets\ClientSocket.cs" />
         <Compile Include="Code\Sockets\ServerSocket.cs" />

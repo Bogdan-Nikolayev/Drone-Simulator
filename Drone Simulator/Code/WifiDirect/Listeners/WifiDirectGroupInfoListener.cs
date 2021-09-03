@@ -15,7 +15,7 @@ namespace Drone_Simulator.WifiDirect.Listeners
         public void OnGroupInfoAvailable(WifiP2pGroup? group)
         {
             Log.Debug(group);
-            
+
             _onGroupInfoAvailable?.Invoke(group);
         }
     }
