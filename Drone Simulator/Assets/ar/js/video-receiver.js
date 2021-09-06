@@ -2,9 +2,9 @@
 
 function receiveOffer(offer) {
   console.log("Received offer (JS): " + offer);
-  console.log("Received offer (JS, escaped): " + escapeJson(offer));
+  console.log("Received offer (JS, escaped): " + escapeCRLF(offer));
 
-  peerConnection.setRemoteDescription(JSON.parse(escapeJson(offer))).then(
+  peerConnection.setRemoteDescription(JSON.parse(escapeCRLF(offer))).then(
     function () {
       createAndSendAnswer();
     },

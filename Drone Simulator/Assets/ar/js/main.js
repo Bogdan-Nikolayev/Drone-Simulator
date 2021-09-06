@@ -3,8 +3,8 @@ function showError(error) {
 }
 
 // https://stackoverflow.com/a/27725393
-function escapeJson(string) {
+function escapeCRLF(string) {
   return string
-      .replace(/\n/g, "\\n")
-      .replace(/\r/g, "\\r");
+    .replace(/\r/g, "\\r")
+    .replace(/\n/g, "\\n");
 }

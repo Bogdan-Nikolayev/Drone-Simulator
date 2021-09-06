@@ -26,7 +26,7 @@ function createAndSendOffer() {
 }
 
 function receiveAnswer(answer) {
-    console.log("Received answer (JS, escaped): " + escapeJson(answer));
+    console.log("Received answer (JS, escaped): " + escapeCRLF(answer));
 
-    peerConnection.setRemoteDescription(JSON.parse(escapeJson(answer)));
+    peerConnection.setRemoteDescription(JSON.parse(escapeCRLF(answer)));
 }
