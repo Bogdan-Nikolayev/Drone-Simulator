@@ -104,6 +104,7 @@
       <AndroidAsset Include="Assets\ar\js\aframe-ar-nft.js" />
       <AndroidAsset Include="Assets\ar\js\aframe-look-at-component.min.js" />
       <AndroidAsset Include="Assets\ar\js\aframe.min.js" />
+      <AndroidAsset Include="Assets\ar\js\main.js" />
       <AndroidAsset Include="Assets\ar\js\video-receiver.js" />
       <AndroidAsset Include="Assets\ar\js\video-sender.js" />
       <AndroidAsset Include="Assets\ar\video-recorder.html" />
