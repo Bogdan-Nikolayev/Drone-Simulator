@@ -34,7 +34,7 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendOffer(string offer)
         {
-            Log.Debug("Sending offer (CSharp)" + offer);
+            Log.Debug("Sending offer (CSharp): " + offer);
 
             _signalingSocket.SendString((sbyte)WebRtcMessageType.Offer, offer);
         }
@@ -44,7 +44,7 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendAnswer(string answer)
         {
-            Log.Debug("Sending answer (CSharp)" + answer);
+            Log.Debug("Sending answer (CSharp): " + answer);
 
             _signalingSocket.SendString((sbyte)WebRtcMessageType.Answer, answer);
         }
