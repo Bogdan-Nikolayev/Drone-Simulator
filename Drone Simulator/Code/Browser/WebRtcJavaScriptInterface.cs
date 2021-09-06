@@ -1,11 +1,10 @@
 ﻿using Android.Webkit;
 using Drone_Simulator.Sockets;
 using Java.Interop;
-using Java.Lang;
 
 namespace Drone_Simulator.Browser
 {
-    public class WebRtcJavaScriptInterface : Object
+    public class WebRtcJavaScriptInterface : Java.Lang.Object
     {
         private readonly WebView _webView;
         private readonly ISocket _signalingSocket;
@@ -24,6 +23,9 @@ namespace Drone_Simulator.Browser
                         break;
                     case WebRtcMessageType.Answer:
                         ReceiveAnswer(message);
+                        break;
+                    case WebRtcMessageType.IceCandidate:
+                        ReceiveIceCandidate(message);
                         break;
                 }
             };
@@ -48,15 +50,30 @@ namespace Drone_Simulator.Browser
 
             _signalingSocket.SendString((sbyte)WebRtcMessageType.Answer, answer);
         }
+        
+        [Export]
+        [JavascriptInterface]
+        // ReSharper disable once UnusedMember.Global
+        public void SendIceCandidate(string iceCandidate)
+        {
+            Log.Debug("Sending ICE candidate (CSharp): " + iceCandidate);
 
-        public void ReceiveOffer(string offer)
+            _signalingSocket.SendString((sbyte)WebRtcMessageType.IceCandidate, iceCandidate);
+        }
+
+        private void ReceiveOffer(string offer)
         {
             _webView.LoadUrl($"javascript:receiveOffer('{offer}');");
         }
 
-        public void ReceiveAnswer(string answer)
+        private void ReceiveAnswer(string answer)
         {
             _webView.LoadUrl($"javascript:receiveAnswer('{answer}');");
+        }
+
+        private void ReceiveIceCandidate(string iceCandidate)
+        {
+            _webView.LoadUrl($"javascript:receiveIceCandidate('{iceCandidate}');");
         }
     }
 }

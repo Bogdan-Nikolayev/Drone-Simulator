@@ -3,6 +3,7 @@
     public enum WebRtcMessageType : sbyte
     {
         Offer = 0,
-        Answer = 1
+        Answer = 1,
+        IceCandidate = 5
     }
 }

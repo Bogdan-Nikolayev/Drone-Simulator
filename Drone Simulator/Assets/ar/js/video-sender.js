@@ -1,4 +1,3 @@
-let peerConnection = new RTCPeerConnection();
 startWebRTC();
 
 function startWebRTC() {
