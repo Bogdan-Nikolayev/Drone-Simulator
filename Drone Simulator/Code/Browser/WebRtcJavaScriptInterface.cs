@@ -51,12 +51,12 @@ namespace Drone_Simulator.Browser
 
         public void ReceiveOffer(string offer)
         {
-            _webView.LoadUrl("javascript:receiveOffer('" + offer + "');");
+            _webView.LoadUrl($"javascript:receiveOffer('{offer}');");
         }
 
         public void ReceiveAnswer(string answer)
         {
-            _webView.LoadUrl("javascript:receiveAnswer('" + answer + "');");
+            _webView.LoadUrl($"javascript:receiveAnswer('{answer}');");
         }
     }
 }
