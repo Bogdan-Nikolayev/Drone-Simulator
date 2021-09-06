@@ -1,6 +1,7 @@
 ﻿let peerConnection = new RTCPeerConnection();
 
 function receiveOffer(offer) {
+  console.log("Received offer (JS): " + offer);
   console.log("Received offer (JS, escaped): " + escapeJson(offer));
 
   peerConnection.setRemoteDescription(JSON.parse(escapeJson(offer))).then(
