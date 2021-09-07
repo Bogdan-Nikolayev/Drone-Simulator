@@ -18,7 +18,7 @@ function createAndSendOffer() {
     function (offer) {
       peerConnection.setLocalDescription(offer);
 
-      log("Sending offer: " + offer);
+      log("Sending offer: " + JSON.stringify(offer));
       android.SendOffer(JSON.stringify(offer));
     },
     alertError);

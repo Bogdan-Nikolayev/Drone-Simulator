@@ -8,7 +8,7 @@ function subscribeToRemoteMediaStream() {
   peerConnection.addEventListener('track', function (event) {
     log("Added remote track");
 
-    remoteStream.addTrack(event.track, remoteStream);
+    remoteStream.addTrack(event.track);
   });
 }
 
