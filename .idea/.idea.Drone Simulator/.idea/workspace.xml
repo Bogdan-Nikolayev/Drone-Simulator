@@ -103,9 +103,9 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcMessageType.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/main.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ClientSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/main.js" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -172,7 +172,7 @@
       <workItem from="1630914448145" duration="16036000" />
       <workItem from="1630938285144" duration="6644000" />
       <workItem from="1630946764622" duration="3715000" />
-      <workItem from="1631005185682" duration="22959000" />
+      <workItem from="1631005185682" duration="23031000" />
     </task>
     <servers />
   </component>
