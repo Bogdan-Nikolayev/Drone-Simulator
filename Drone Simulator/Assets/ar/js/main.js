@@ -1,26 +1,41 @@
-const config = {
-  iceServers: []
+let peerConnection = createPeerConnection();
+
+function createPeerConnection()
+{
+  let config = {
+    iceServers: [{
+      urls: "stun:stun.l.google.com:19302"
+    }]
+  };
+  let peerConnection = new RTCPeerConnection(config);
+
+  peerConnection.addEventListener('icecandidate', function (event) {
+    if (event.candidate) {
+      setTimeout(() => {
+        log("Sending ICE candidate: " + JSON.stringify(event.candidate))
+        android.SendIceCandidate(JSON.stringify(event.candidate));
+      }, 3000);
+    }
+  });
+  peerConnection.addEventListener('connectionstatechange', event => {
+    log("Changed connection state: " + peerConnection.connectionState);
+  });
+
+  return peerConnection;
 }
-let peerConnection = new RTCPeerConnection(config);
-peerConnection.addEventListener('icecandidate', function (event) {
-  setTimeout(() => {
-    android.SendIceCandidate(JSON.stringify(event.candidate));
-  }, Math.floor(Math.random() * 11000));
-});
-peerConnection.addEventListener('connectionstatechange', event => {
-  console.log("Connection state has been changed: " + peerConnection.connectionState)
-});
-console.log("Subscribed");
 
 function receiveIceCandidate(iceCandidate) {
-  console.log("Received ICE candidate (JS): " + iceCandidate);
-  console.log("Received ICE candidate (JS, escaped): " + escapeCRLF(iceCandidate));
+  log("Received ICE candidate: " + iceCandidate);
 
   peerConnection.addIceCandidate(JSON.parse(iceCandidate));
 }
 
-function showError(error) {
-  alert(error.name + ": " + error.message);
+function log(message) {
+  console.log("[JavaScript] " + message);
+}
+
+function alertError(error) {
+  alert("ERROR. " + error.name + ": " + error.message);
 }
 
 // https://stackoverflow.com/a/27725393

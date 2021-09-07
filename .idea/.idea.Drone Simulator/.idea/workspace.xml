@@ -91,17 +91,17 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcSignalingServer.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ISocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ClientSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/video-recorder.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/obj/Debug/90/assets/ar/js/main.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcMessageType.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/main.js" />
     </changedPaths>
   </component>
@@ -120,8 +120,8 @@
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34981275" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9b15498" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-06T18:14:02.199035800Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R52M80PQ5FF" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-07T11:56:25.744329Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="INTEGER" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -169,6 +169,7 @@
       <workItem from="1630914448145" duration="16036000" />
       <workItem from="1630938285144" duration="6644000" />
       <workItem from="1630946764622" duration="3715000" />
+      <workItem from="1631005185682" duration="3089000" />
     </task>
     <servers />
   </component>

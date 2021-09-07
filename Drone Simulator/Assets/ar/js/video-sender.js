@@ -1,31 +1,31 @@
-startWebRTC();
+startVideoStreaming();
 
-function startWebRTC() {
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(
-        function (stream) {
-            let video = document.getElementsByTagName("video")[0];
-            if (video) video.srcObject = stream;
+function startVideoStreaming() {
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(
+    function (stream) {
+      let video = document.getElementsByTagName("video")[0];
+      if (video) video.srcObject = stream;
 
-            peerConnection.addTrack(stream.getVideoTracks()[0]);
+      peerConnection.addTrack(stream.getVideoTracks()[0]);
 
-            createAndSendOffer();
-        },
-        showError);
+      createAndSendOffer();
+    },
+    alertError);
 }
 
 function createAndSendOffer() {
-    peerConnection.createOffer().then(
-        function (offer) {
-            peerConnection.setLocalDescription(offer);
+  peerConnection.createOffer().then(
+    function (offer) {
+      peerConnection.setLocalDescription(offer);
 
-            console.log("Sending offer (JS): " + offer);
-            android.SendOffer(JSON.stringify(offer));
-        },
-        showError);
+      log("Sending offer: " + offer);
+      android.SendOffer(JSON.stringify(offer));
+    },
+    alertError);
 }
 
 function receiveAnswer(answer) {
-    console.log("Received answer (JS, escaped): " + escapeCRLF(answer));
+  log("Received answer: " + escapeCRLF(answer));
 
-    peerConnection.setRemoteDescription(JSON.parse(escapeCRLF(answer)));
+  peerConnection.setRemoteDescription(JSON.parse(escapeCRLF(answer)));
 }

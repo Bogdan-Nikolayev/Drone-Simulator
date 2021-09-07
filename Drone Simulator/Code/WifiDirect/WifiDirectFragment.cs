@@ -102,7 +102,7 @@ namespace Drone_Simulator.WifiDirect
         private void DiscoverPeers()
         {
             Log.Debug();
-            
+
             _manager.DiscoverPeers(_channel, new WifiDirectActionListener(null, null));
         }
 
@@ -119,7 +119,9 @@ namespace Drone_Simulator.WifiDirect
             // at android.widget.AbsListView.performItemClick(AbsListView.java:1295)
             WifiP2pConfig config = new WifiP2pConfig
             {
-                DeviceAddress = device.DeviceAddress
+                DeviceAddress = device.DeviceAddress,
+                // To make this device as owner.
+                GroupOwnerIntent = 15
             };
 
             _manager.Connect(_channel, config, new WifiDirectActionListener(null, null));
