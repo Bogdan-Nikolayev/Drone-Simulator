@@ -29,6 +29,7 @@ namespace Drone_Simulator.Sockets
             }
         }
 
+
         protected void StartListening()
         {
             Thread thread = new Thread(new Runnable(() =>
@@ -36,37 +37,78 @@ namespace Drone_Simulator.Sockets
                 using DataInputStream inputStream = new DataInputStream(_socket.InputStream);
                 while (true)
                 {
-                    int totalLength = inputStream.ReadInt();
-                    sbyte messageType = inputStream.ReadByte();
-                    
-                    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                     byte[] buffer = new byte[1024];
-                    int progressLength = 1;
-                    Log.Debug("total: " + totalLength);
-                    while (progressLength != totalLength)
+                    int incomeLength = 0;
+                    int readLength = 0;
+
+                    while (incomeLength - readLength != 0)
+                        ReadMessage();
+
+                    void ReadMessage()
                     {
-                        int incomeLength = inputStream.Read(buffer);
-                        int remainingLength = totalLength - progressLength;
-                        int readLength = Math.Min(remainingLength, buffer.Length);
-                        outputStream.Write(buffer, 0, readLength);
+                        int totalLength = inputStream.ReadInt();
+                        sbyte messageType = inputStream.ReadByte();
 
-                        progressLength += readLength;
-                        Log.Debug("income: " + incomeLength);
-                        Log.Debug("remain: " + remainingLength);
-                        Log.Debug("read: " + readLength);
-                        Log.Debug("progress: " + progressLength);
+                        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+                        int progressLength = 1;
+                        Log.Debug("total: " + totalLength);
+                        while (progressLength != totalLength)
+                        {
+                            incomeLength = inputStream.Read(buffer);
+                            int remainingLength = totalLength - progressLength;
+                            readLength = Math.Min(remainingLength, buffer.Length);
+                            outputStream.Write(buffer, 0, readLength);
+
+                            progressLength += readLength;
+                            Log.Debug("income: " + incomeLength);
+                            Log.Debug("remain: " + remainingLength);
+                            Log.Debug("read: " + readLength);
+                            Log.Debug("progress: " + progressLength);
+                        }
+
+                        string message = Encoding.UTF8.GetString(outputStream.ToByteArray());
+
+                        // Run in UI thread.
+                        new Handler(Looper.MainLooper).Post(() => StringReceived?.Invoke(messageType, message));
+
+                        Log.Debug("Received: " + message);
                     }
-
-                    string message = Encoding.UTF8.GetString(outputStream.ToByteArray());
-
-                    // Run in UI thread.
-                    new Handler(Looper.MainLooper).Post(() => StringReceived?.Invoke(messageType, message));
-
-                    Log.Debug("Received: " + message);
                 }
             }));
             thread.Start();
         }
+
+        // private void ReadMessage(DataInputStream inputStream)
+        // {
+        //     int totalLength = inputStream.ReadInt();
+        //     sbyte messageType = inputStream.ReadByte();
+        //
+        //     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        //
+        //     int progressLength = 1;
+        //     Log.Debug("total: " + totalLength);
+        //     while (progressLength != totalLength)
+        //     {
+        //         int incomeLength = inputStream.Read(buffer);
+        //         int remainingLength = totalLength - progressLength;
+        //         readLength = Math.Min(remainingLength, buffer.Length);
+        //         outputStream.Write(buffer, 0, readLength);
+        //
+        //         progressLength += readLength;
+        //         Log.Debug("income: " + incomeLength);
+        //         Log.Debug("remain: " + remainingLength);
+        //         Log.Debug("read: " + readLength);
+        //         Log.Debug("progress: " + progressLength);
+        //     }
+        //
+        //     string message = Encoding.UTF8.GetString(outputStream.ToByteArray());
+        //
+        //     // Run in UI thread.
+        //     new Handler(Looper.MainLooper).Post(() => StringReceived?.Invoke(messageType, message));
+        //
+        //     Log.Debug("Received: " + message);
+        // }
 
         public void Dispose()
         {
