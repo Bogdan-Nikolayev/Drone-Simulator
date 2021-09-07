@@ -4,6 +4,6 @@
     {
         Offer = 0,
         Answer = 1,
-        IceCandidate = 5
+        IceCandidate = 2
     }
 }
