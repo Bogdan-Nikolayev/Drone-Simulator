@@ -11,10 +11,10 @@ function createPeerConnection()
 
   peerConnection.addEventListener('icecandidate', function (event) {
     if (event.candidate) {
-      setTimeout(() => {
+      // setTimeout(() => {
         log("Sending ICE candidate: " + JSON.stringify(event.candidate))
         android.SendIceCandidate(JSON.stringify(event.candidate));
-      }, 3000);
+      // }, 3000);
     }
   });
   peerConnection.addEventListener('connectionstatechange', event => {
