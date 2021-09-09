@@ -1,5 +1,5 @@
 ﻿using Android.Webkit;
-using Drone_Simulator.Sockets;
+using Drone_Simulator.Signaling;
 using Drone_Simulator.WebRTC;
 using Java.Interop;
 using Xam.WebRtc.Android;
@@ -9,33 +9,21 @@ namespace Drone_Simulator.Browser
     public class WebRtcJavaScriptInterface : Java.Lang.Object, IIceCandidateReceiver
     {
         private readonly WebView _webView;
-        private readonly ISocket _signalingSocket;
+        private readonly WebRtcSignalingInterface _signalingInterface;
 
-        public WebRtcJavaScriptInterface(WebView webView, ISocket signalingSocket)
+        public WebRtcJavaScriptInterface(WebView webView, WebRtcSignalingInterface signalingInterface)
         {
             _webView = webView;
-            _signalingSocket = signalingSocket;
+            _signalingInterface = signalingInterface;
 
-            _signalingSocket.StringReceived += (type, message) =>
-            {
-                switch ((WebRtcMessageType)type)
-                {
-                    case WebRtcMessageType.Offer:
-                        ReceiveOffer(message);
-                        break;
-                    case WebRtcMessageType.Answer:
-                        ReceiveAnswer(message);
-                        break;
-                    case WebRtcMessageType.IceCandidate:
-                        ReceiveIceCandidate(message);
-                        break;
-                }
-            };
+            _signalingInterface.OfferReceived += ReceiveOffer;
+            _signalingInterface.AnswerReceived += ReceiveAnswer;
+            _signalingInterface.IceCandidateReceived += ReceiveIceCandidate;
         }
 
         public void AddIceCandidate(IceCandidate candidate)
         {
-            SendIceCandidate(candidate.ToString());
+            SendIceCandidate(candidate.Sdp);
         }
 
         [Export]
@@ -43,7 +31,7 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendOffer(string offer)
         {
-            _signalingSocket.SendString((sbyte)WebRtcMessageType.Offer, offer);
+            _signalingInterface.SendOffer(offer);
         }
 
         [Export]
@@ -51,7 +39,7 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendAnswer(string answer)
         {
-            _signalingSocket.SendString((sbyte)WebRtcMessageType.Answer, answer);
+            _signalingInterface.SendAnswer(answer);
         }
 
         [Export]
@@ -59,22 +47,27 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendIceCandidate(string iceCandidate)
         {
-            _signalingSocket.SendString((sbyte)WebRtcMessageType.IceCandidate, iceCandidate);
+            _signalingInterface.SendIceCandidate(iceCandidate);
         }
 
         private void ReceiveOffer(string offer)
         {
-            _webView.LoadUrl($"javascript:receiveOffer('{offer}');");
+            InvokeJavaScriptFunction("receiveOffer", offer);
         }
 
         private void ReceiveAnswer(string answer)
         {
-            _webView.LoadUrl($"javascript:receiveAnswer('{answer}');");
+            InvokeJavaScriptFunction("receiveAnswer", answer);
         }
 
         private void ReceiveIceCandidate(string iceCandidate)
         {
-            _webView.LoadUrl($"javascript:receiveIceCandidate('{iceCandidate}');");
+            InvokeJavaScriptFunction("receiveIceCandidate", iceCandidate);
+        }
+
+        private void InvokeJavaScriptFunction(string functionName, string parameter)
+        {
+            _webView.LoadUrl($"javascript:{functionName}('{parameter}');");
         }
     }
 }

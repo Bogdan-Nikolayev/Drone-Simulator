@@ -61,11 +61,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/web-rtc.css" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/css/web-rtc.css" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/GrantedWebChromeClient.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/web-rtc.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/web-rtc.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/css/video-recorder.css" />
@@ -108,10 +103,15 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateReciever.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/PeerConnectionObserver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/SdpObserver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcConnection.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/SignalingServer.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcSignalingServer.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Signaling/WebRtcSignalingServer.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Signaling/WebRtcSignalingSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Signaling/WebRtcMessageType.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -179,7 +179,7 @@
       <workItem from="1630938285144" duration="6644000" />
       <workItem from="1630946764622" duration="3715000" />
       <workItem from="1631005185682" duration="23031000" />
-      <workItem from="1631099480021" duration="10469000" />
+      <workItem from="1631099480021" duration="15311000" />
     </task>
     <servers />
   </component>

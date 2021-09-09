@@ -56,7 +56,6 @@
         <Reference Include="Mono.Android.Export" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Code\Browser\WebRtcMessageType.cs" />
         <Compile Include="Code\Constants.cs" />
         <Compile Include="Code\Extensions\ActivityExtensions.cs" />
         <Compile Include="Code\Extensions\WifiDirectExtensions.cs" />
@@ -64,6 +63,8 @@
         <Compile Include="Code\Log.cs" />
         <Compile Include="Code\Browser\GrantedWebChromeClient.cs" />
         <Compile Include="Code\Browser\WebRtcJavaScriptInterface.cs" />
+        <Compile Include="Code\Signaling\WebRtcMessageType.cs" />
+        <Compile Include="Code\Signaling\WebRtcSignalingInterface.cs" />
         <Compile Include="Code\Sockets\ISocket.cs" />
         <Compile Include="Code\Sockets\ClientSocket.cs" />
         <Compile Include="Code\Sockets\ServerSocket.cs" />
