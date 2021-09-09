@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Drone" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -32,34 +33,34 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/ee/41f89d8f/PermissionRequest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/8e/fe12a2bc/JavascriptInterfaceAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/e7/6b36183e/Permission.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4124E740-F7CA-4DC6-ABF7-FC366FB2D9CA/78/8935a79d/ContextCompat.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/2b/2e584d93/WebChromeClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/82/64cf25cc/WifiP2pManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/3e/d3b7b2d5/WifiP2pDeviceList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/f5/850a4d9c/WifiP2pFailureReason.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BD6BD528-A878-4B7C-AF03-E9F25C9F0D7B/83/bb242f2d/JniRuntime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FEFEE6C2-C695-4590-88A9-DF092723E052/3c/e4a44acb/FragmentActivity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/3c/57179f96/InputStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58DCCD53-33A7-48CA-8E43-8A2C600C06D9/0c/f1839582/AppCompatActivity.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/57/86895abc/WebView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/af/97a36d10/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/IWifiDirectHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/d5/d664c5c9/FilterInputStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/fb/2e3eff06/BufferedInputStream.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/9b/6f09327f/Activity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/09/f6ea324e/Socket.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/b4/b0f371c4/MediaStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/8e/fe12a2bc/JavascriptInterfaceAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/e7/6b36183e/Permission.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4124E740-F7CA-4DC6-ABF7-FC366FB2D9CA/78/8935a79d/ContextCompat.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/55/700fa1b9/PeerConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/82/64cf25cc/WifiP2pManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/4b/98fd57fb/PeerConnection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/73/fb7bed58/INativePeerConnectionFactoryInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BD6BD528-A878-4B7C-AF03-E9F25C9F0D7B/83/bb242f2d/JniRuntime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/57/86895abc/WebView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/af/97a36d10/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/16/5deeed2e/INativePeerConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/9b/6f09327f/Activity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BD6BD528-A878-4B7C-AF03-E9F25C9F0D7B/a1/d472d72c/IJavaPeerable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectActionListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectPeerListListener.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebView/JavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/fragment_wifi_direct.xml" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectActionListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Resources/layout/activity_main.axml" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/web-rtc.css" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/css/web-rtc.css" />
@@ -93,19 +94,24 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-recorder.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcSignalingServer.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ISocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/video-recorder.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/obj/Debug/90/assets/ar/js/main.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcMessageType.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ClientSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/main.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateReciever.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateReceiver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/PeerConnectionObserver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/SdpObserver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcConnection.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -124,7 +130,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9b15498" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-07T18:40:58.990332300Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-08T13:13:08.762930900Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="INTEGER" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -173,6 +179,7 @@
       <workItem from="1630938285144" duration="6644000" />
       <workItem from="1630946764622" duration="3715000" />
       <workItem from="1631005185682" duration="23031000" />
+      <workItem from="1631099480021" duration="10469000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,7 @@ using Android.Widget;
 using Drone_Simulator.Browser;
 using Drone_Simulator.Extensions;
 using Drone_Simulator.Sockets;
+using Drone_Simulator.WebRTC;
 using Drone_Simulator.WifiDirect;
 using Java.Lang;
 
@@ -67,10 +68,12 @@ namespace Drone_Simulator
         private void OpenWebView(string htmlPage, ISocket socket)
         {
             WebView webView = FindViewById<WebView>(Resource.Id.web_view);
+            WebRtcJavaScriptInterface jsInterface = new WebRtcJavaScriptInterface(webView, socket);
+            WebRtcConnection webRtcConnection = new WebRtcConnection(this, jsInterface);
 
             webView.Settings.JavaScriptEnabled = true;
             // Add C# adapter to JavaScript.
-            webView.AddJavascriptInterface(new WebRtcJavaScriptInterface(webView, socket), "android");
+            webView.AddJavascriptInterface(jsInterface, "android");
             // Provide the required permissions.
             webView.SetWebChromeClient(new GrantedWebChromeClient());
 

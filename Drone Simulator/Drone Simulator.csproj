@@ -68,6 +68,10 @@
         <Compile Include="Code\Sockets\ClientSocket.cs" />
         <Compile Include="Code\Sockets\ServerSocket.cs" />
         <Compile Include="Code\Sockets\Socket.cs" />
+        <Compile Include="Code\WebRTC\IIceCandidateReceiver.cs" />
+        <Compile Include="Code\WebRTC\PeerConnectionObserver.cs" />
+        <Compile Include="Code\WebRTC\SdpObserver.cs" />
+        <Compile Include="Code\WebRTC\WebRtcConnection.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectActionListener.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectGroupInfoListener.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectConnectionInfoListener.cs" />

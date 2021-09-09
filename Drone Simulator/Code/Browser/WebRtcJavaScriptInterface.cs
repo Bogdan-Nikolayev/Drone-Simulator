@@ -1,10 +1,12 @@
 ﻿using Android.Webkit;
 using Drone_Simulator.Sockets;
+using Drone_Simulator.WebRTC;
 using Java.Interop;
+using Xam.WebRtc.Android;
 
 namespace Drone_Simulator.Browser
 {
-    public class WebRtcJavaScriptInterface : Java.Lang.Object
+    public class WebRtcJavaScriptInterface : Java.Lang.Object, IIceCandidateReceiver
     {
         private readonly WebView _webView;
         private readonly ISocket _signalingSocket;
@@ -31,6 +33,11 @@ namespace Drone_Simulator.Browser
             };
         }
 
+        public void AddIceCandidate(IceCandidate candidate)
+        {
+            SendIceCandidate(candidate.ToString());
+        }
+
         [Export]
         [JavascriptInterface]
         // ReSharper disable once UnusedMember.Global
@@ -46,7 +53,7 @@ namespace Drone_Simulator.Browser
         {
             _signalingSocket.SendString((sbyte)WebRtcMessageType.Answer, answer);
         }
-        
+
         [Export]
         [JavascriptInterface]
         // ReSharper disable once UnusedMember.Global
