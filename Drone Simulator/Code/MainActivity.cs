@@ -61,7 +61,7 @@ namespace Drone_Simulator
                 else
                     socket = new ClientSocket(info.GroupOwnerAddress, port);
 
-                RunOnUiThread(() => GetIceCandidatesThenOpenWebView(info.IsGroupOwner, socket));
+                GetIceCandidatesThenOpenWebView(info.IsGroupOwner, socket);
             }));
             thread.Start();
         }
@@ -75,7 +75,7 @@ namespace Drone_Simulator
                 this, isGroupOwner, new WebRtcSignalingServer(socket));
 
             webRtcIceCandidatesCollector.Initialized += () =>
-                OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer);
+                RunOnUiThread(() => OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer));
             webRtcIceCandidatesCollector.IceCandidateGathered +=
                 candidate => signalingServer.SendIceCandidate(candidate.Sdp);
         }

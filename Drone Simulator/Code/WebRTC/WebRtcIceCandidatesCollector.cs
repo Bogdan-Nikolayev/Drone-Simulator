@@ -22,6 +22,7 @@ namespace Drone_Simulator.WebRTC
 
             // https://amryousef.me/android-webrtc
 
+            // PeerConnectionFactory.InitializeAndroidGlobals(this, true, true, true);
             PeerConnectionFactory.InitializationOptions initializationOptions = PeerConnectionFactory
                 .InitializationOptions
                 .InvokeBuilder(context)
@@ -40,13 +41,18 @@ namespace Drone_Simulator.WebRTC
                 DisableEncryption = true,
                 DisableNetworkMonitor = true
             };
-            PeerConnection peerConnection = PeerConnectionFactory
+
+            PeerConnectionFactory factory = PeerConnectionFactory
                 .InvokeBuilder()
-                .SetVideoDecoderFactory(new DefaultVideoDecoderFactory(rootEglBase.EglBaseContext))
-                .SetVideoEncoderFactory(new DefaultVideoEncoderFactory(rootEglBase.EglBaseContext, true, true))
+                // .SetVideoDecoderFactory(new DefaultVideoDecoderFactory(rootEglBase.EglBaseContext))
+                // .SetVideoEncoderFactory(new DefaultVideoEncoderFactory(rootEglBase.EglBaseContext, true, true))
                 .SetOptions(options)
-                .CreatePeerConnectionFactory()
-                .CreatePeerConnection(new PeerConnection.IceServer[1] {iceServer}, peerConnectionObserver);
+                .CreatePeerConnectionFactory();
+            MediaStream mediaStream = factory.CreateLocalMediaStream("ARDAMS");
+
+            PeerConnection peerConnection =
+                factory.CreatePeerConnection(new PeerConnection.IceServer[1] {iceServer}, peerConnectionObserver);
+
 
             if (isInitiator)
             {
@@ -61,11 +67,21 @@ namespace Drone_Simulator.WebRTC
                         sdpObserver, new SessionDescription(SessionDescription.SdpType.Answer, answer));
                 };
 
-                peerConnection.CreateOffer(sdpObserver, new MediaConstraints()
+
+                MediaConstraints constraints = new MediaConstraints()
                 {
                     Mandatory = new ArrayList
-                        {new MediaConstraints.KeyValuePair("OfferToReceiveVideo", "true")}
-                });
+                    {
+                        // new MediaConstraints.KeyValuePair("maxWidth", "1024"),
+                        // new MediaConstraints.KeyValuePair("maxHeight", "768"),
+                        new MediaConstraints.KeyValuePair("OfferToReceiveAudio", "true"),
+                    }
+                };
+                // VideoSource videoSource = factory.CreateVideoSource(false);
+                // mediaStream.AddTrack(factory.CreateVideoTrack("ARDAMSv0", videoSource));
+
+
+                peerConnection.CreateOffer(sdpObserver, constraints);
             }
             else
             {
