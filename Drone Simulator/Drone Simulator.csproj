@@ -69,9 +69,11 @@
         <Compile Include="Code\Sockets\ClientSocket.cs" />
         <Compile Include="Code\Sockets\ServerSocket.cs" />
         <Compile Include="Code\Sockets\Socket.cs" />
-        <Compile Include="Code\WebRTC\IIceCandidateObserver.cs" />
-        <Compile Include="Code\WebRTC\PeerConnectionObserver.cs" />
-        <Compile Include="Code\WebRTC\SdpObserver.cs" />
+        <Compile Include="Code\WebRTC\Observers\AnsweringSdpObserver.cs" />
+        <Compile Include="Code\WebRTC\Observers\IIceCandidateObserver.cs" />
+        <Compile Include="Code\WebRTC\Observers\OfferingSdpObserver.cs" />
+        <Compile Include="Code\WebRTC\Observers\PeerConnectionObserver.cs" />
+        <Compile Include="Code\WebRTC\Observers\SdpObserver.cs" />
         <Compile Include="Code\WebRTC\WebRtcIceCandidatesCollector.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectActionListener.cs" />
         <Compile Include="Code\WifiDirect\Listeners\WifiDirectGroupInfoListener.cs" />

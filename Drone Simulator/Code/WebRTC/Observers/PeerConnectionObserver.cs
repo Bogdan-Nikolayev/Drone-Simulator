@@ -1,6 +1,6 @@
 ﻿using Xam.WebRtc.Android;
 
-namespace Drone_Simulator.WebRTC
+namespace Drone_Simulator.WebRTC.Observers
 {
     public class PeerConnectionObserver : Java.Lang.Object, PeerConnection.IObserver
     {

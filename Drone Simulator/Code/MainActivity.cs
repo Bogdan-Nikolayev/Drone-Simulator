@@ -72,7 +72,7 @@ namespace Drone_Simulator
         {
             WebRtcSignalingServer signalingServer = new WebRtcSignalingServer(socket);
             WebRtcIceCandidatesCollector webRtcIceCandidatesCollector = new WebRtcIceCandidatesCollector(
-                this, new WebRtcSignalingServer(socket));
+                this, isGroupOwner, new WebRtcSignalingServer(socket));
 
             webRtcIceCandidatesCollector.Initialized += () =>
                 OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer);

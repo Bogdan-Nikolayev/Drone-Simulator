@@ -1,13 +1,20 @@
-﻿using Xam.WebRtc.Android;
+﻿using System;
+using Drone_Simulator.Signaling;
+using Xam.WebRtc.Android;
 
-namespace Drone_Simulator.WebRTC
+namespace Drone_Simulator.WebRTC.Observers
 {
     public class SdpObserver : Java.Lang.Object, ISdpObserver
     {
+        protected readonly WebRtcSignalingServer SignalingServer;
         private readonly PeerConnection _peerConnection;
 
-        public SdpObserver(PeerConnection peerConnection)
+        public event Action SetSuccess;
+
+        protected SdpObserver(PeerConnection peerConnection, WebRtcSignalingServer signalingServer)
         {
+            SignalingServer = signalingServer;
+
             _peerConnection = peerConnection;
         }
 
@@ -16,7 +23,7 @@ namespace Drone_Simulator.WebRTC
             Log.Debug(p0);
         }
 
-        public void OnCreateSuccess(SessionDescription p0)
+        public virtual void OnCreateSuccess(SessionDescription p0)
         {
             Log.Debug(p0.Description);
 
@@ -31,6 +38,8 @@ namespace Drone_Simulator.WebRTC
         public void OnSetSuccess()
         {
             Log.Debug();
+            
+            SetSuccess?.Invoke();
         }
     }
 }
