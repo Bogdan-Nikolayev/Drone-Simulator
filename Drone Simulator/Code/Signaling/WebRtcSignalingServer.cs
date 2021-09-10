@@ -5,14 +5,14 @@ using Xam.WebRtc.Android;
 
 namespace Drone_Simulator.Signaling
 {
-    public class WebRtcSignalingInterface
+    public class WebRtcSignalingServer
     {
         private readonly ISocket _socket;
 
-        public WebRtcSignalingInterface(ISocket _socket)
+        public WebRtcSignalingServer(ISocket socket)
         {
-            this._socket = _socket;
-            this._socket.StringReceived += (type, message) =>
+            _socket = socket;
+            _socket.StringReceived += (type, message) =>
             {
                 switch ((WebRtcMessageType)type)
                 {
@@ -46,6 +46,13 @@ namespace Drone_Simulator.Signaling
         public void SendIceCandidate(string iceCandidate)
         {
             _socket.SendString((sbyte)WebRtcMessageType.IceCandidate, iceCandidate);
+        }
+
+        public void ClearEventSubscriptions()
+        {
+            OfferReceived = null;
+            AnswerReceived = null;
+            IceCandidateReceived = null;
         }
     }
 }

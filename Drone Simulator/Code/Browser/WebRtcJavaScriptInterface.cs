@@ -1,29 +1,22 @@
 ﻿using Android.Webkit;
 using Drone_Simulator.Signaling;
-using Drone_Simulator.WebRTC;
 using Java.Interop;
-using Xam.WebRtc.Android;
 
 namespace Drone_Simulator.Browser
 {
-    public class WebRtcJavaScriptInterface : Java.Lang.Object, IIceCandidateReceiver
+    public class WebRtcJavaScriptInterface : Java.Lang.Object
     {
         private readonly WebView _webView;
-        private readonly WebRtcSignalingInterface _signalingInterface;
+        private readonly WebRtcSignalingServer _signalingServer;
 
-        public WebRtcJavaScriptInterface(WebView webView, WebRtcSignalingInterface signalingInterface)
+        public WebRtcJavaScriptInterface(WebView webView, WebRtcSignalingServer signalingServer)
         {
             _webView = webView;
-            _signalingInterface = signalingInterface;
+            _signalingServer = signalingServer;
 
-            _signalingInterface.OfferReceived += ReceiveOffer;
-            _signalingInterface.AnswerReceived += ReceiveAnswer;
-            _signalingInterface.IceCandidateReceived += ReceiveIceCandidate;
-        }
-
-        public void AddIceCandidate(IceCandidate candidate)
-        {
-            SendIceCandidate(candidate.Sdp);
+            _signalingServer.OfferReceived += ReceiveOffer;
+            _signalingServer.AnswerReceived += ReceiveAnswer;
+            _signalingServer.IceCandidateReceived += ReceiveIceCandidate;
         }
 
         [Export]
@@ -31,7 +24,7 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendOffer(string offer)
         {
-            _signalingInterface.SendOffer(offer);
+            _signalingServer.SendOffer(offer);
         }
 
         [Export]
@@ -39,7 +32,7 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendAnswer(string answer)
         {
-            _signalingInterface.SendAnswer(answer);
+            _signalingServer.SendAnswer(answer);
         }
 
         [Export]
@@ -47,7 +40,7 @@ namespace Drone_Simulator.Browser
         // ReSharper disable once UnusedMember.Global
         public void SendIceCandidate(string iceCandidate)
         {
-            _signalingInterface.SendIceCandidate(iceCandidate);
+            _signalingServer.SendIceCandidate(iceCandidate);
         }
 
         private void ReceiveOffer(string offer)

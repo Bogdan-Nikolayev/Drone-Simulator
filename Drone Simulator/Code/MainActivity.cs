@@ -61,17 +61,29 @@ namespace Drone_Simulator
                 else
                     socket = new ClientSocket(info.GroupOwnerAddress, port);
 
-                RunOnUiThread(() => OpenWebView(info.IsGroupOwner ? "video-recorder.html" : "ar.html", socket));
+                RunOnUiThread(() => GetIceCandidatesThenOpenWebView(info.IsGroupOwner, socket));
             }));
             thread.Start();
         }
 
-        private void OpenWebView(string htmlPage, ISocket socket)
+        // We can't do it simultaneously, because we have only one socket,
+        // so event from one action will affect different subscriptions.
+        private void GetIceCandidatesThenOpenWebView(bool isGroupOwner, ISocket socket)
+        {
+            WebRtcSignalingServer signalingServer = new WebRtcSignalingServer(socket);
+            WebRtcIceCandidatesCollector webRtcIceCandidatesCollector = new WebRtcIceCandidatesCollector(
+                this, new WebRtcSignalingServer(socket));
+
+            webRtcIceCandidatesCollector.Initialized += () =>
+                OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer);
+            webRtcIceCandidatesCollector.IceCandidateGathered +=
+                candidate => signalingServer.SendIceCandidate(candidate.Sdp);
+        }
+
+        private void OpenWebView(string htmlPage, WebRtcSignalingServer signalingServer)
         {
             WebView webView = FindViewById<WebView>(Resource.Id.web_view);
-            WebRtcJavaScriptInterface jsInterface =
-                new WebRtcJavaScriptInterface(webView, new WebRtcSignalingInterface(socket));
-            WebRtcConnection webRtcConnection = new WebRtcConnection(this, jsInterface);
+            WebRtcJavaScriptInterface jsInterface = new WebRtcJavaScriptInterface(webView, signalingServer);
 
             webView.Settings.JavaScriptEnabled = true;
             // Add C# adapter to JavaScript.

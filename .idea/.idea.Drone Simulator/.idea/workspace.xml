@@ -58,11 +58,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/16/5deeed2e/INativePeerConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/9b/6f09327f/Activity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BD6BD528-A878-4B7C-AF03-E9F25C9F0D7B/a1/d472d72c/IJavaPeerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1B39A03C-32EC-4625-8A78-21E202E0269F/90/b539a05b/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/web-rtc.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/css/video-recorder.css" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Listeners/WifiDirectPeerListListener.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectBroadcastReceiver.cs" />
@@ -103,15 +102,17 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateReciever.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateReceiver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/PeerConnectionObserver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/SdpObserver.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcConnection.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/SignalingServer.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcSignalingServer.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Signaling/WebRtcSignalingServer.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Signaling/WebRtcSignalingSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Signaling/WebRtcMessageType.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Signaling/WebRtcSignalingServer.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateObserver.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/SdpObserver.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcConnection.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcIceCandidatesCollector.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -180,6 +181,7 @@
       <workItem from="1630946764622" duration="3715000" />
       <workItem from="1631005185682" duration="23031000" />
       <workItem from="1631099480021" duration="15311000" />
+      <workItem from="1631264840881" duration="3333000" />
     </task>
     <servers />
   </component>

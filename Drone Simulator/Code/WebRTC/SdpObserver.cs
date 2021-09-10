@@ -31,8 +31,6 @@ namespace Drone_Simulator.WebRTC
         public void OnSetSuccess()
         {
             Log.Debug();
-
-            _peerConnection.InvokeIceGatheringState();
         }
     }
 }

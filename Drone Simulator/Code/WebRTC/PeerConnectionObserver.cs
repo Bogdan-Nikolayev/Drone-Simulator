@@ -4,11 +4,11 @@ namespace Drone_Simulator.WebRTC
 {
     public class PeerConnectionObserver : Java.Lang.Object, PeerConnection.IObserver
     {
-        private readonly IIceCandidateReceiver _iceCandidateReceiver;
+        private readonly IIceCandidateObserver _iceCandidateObserver;
 
-        public PeerConnectionObserver(IIceCandidateReceiver iceCandidateReceiver)
+        public PeerConnectionObserver(IIceCandidateObserver iceCandidateObserver)
         {
-            _iceCandidateReceiver = iceCandidateReceiver;
+            _iceCandidateObserver = iceCandidateObserver;
         }
 
         public void OnAddStream(MediaStream p0)
@@ -30,7 +30,7 @@ namespace Drone_Simulator.WebRTC
         {
             Log.Debug(p0.Sdp, p0.ToString());
 
-            _iceCandidateReceiver.AddIceCandidate(p0);
+            _iceCandidateObserver.OnIceCandidate(p0);
         }
 
         public void OnIceCandidatesRemoved(IceCandidate[] p0)
