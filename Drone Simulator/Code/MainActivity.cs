@@ -1,4 +1,5 @@
-﻿using Android;
+﻿using System.Collections.Generic;
+using Android;
 using Android.App;
 using Android.Net.Wifi.P2p;
 using Android.OS;
@@ -13,6 +14,7 @@ using Drone_Simulator.Sockets;
 using Drone_Simulator.WebRTC;
 using Drone_Simulator.WifiDirect;
 using Java.Lang;
+using Xam.WebRtc.Android;
 
 namespace Drone_Simulator
 {
@@ -20,6 +22,7 @@ namespace Drone_Simulator
     public class MainActivity : AppCompatActivity
     {
         private IWifiDirectHandler _wifiDirect;
+        private List<IceCandidate> _iceCandidates = new List<IceCandidate>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -71,19 +74,31 @@ namespace Drone_Simulator
         private void GetIceCandidatesThenOpenWebView(bool isGroupOwner, ISocket socket)
         {
             WebRtcSignalingServer signalingServer = new WebRtcSignalingServer(socket);
+
+            // RunOnUiThread(() => OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer));
+
             WebRtcIceCandidatesCollector webRtcIceCandidatesCollector = new WebRtcIceCandidatesCollector(
                 this, isGroupOwner, new WebRtcSignalingServer(socket));
 
             webRtcIceCandidatesCollector.Initialized += () =>
+            {
+                Thread.Sleep(5000);
+
                 RunOnUiThread(() => OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer));
+            };
             webRtcIceCandidatesCollector.IceCandidateGathered +=
-                candidate => signalingServer.SendIceCandidate(candidate.Sdp);
+                candidate => _iceCandidates.Add(candidate);
         }
 
         private void OpenWebView(string htmlPage, WebRtcSignalingServer signalingServer)
         {
             WebView webView = FindViewById<WebView>(Resource.Id.web_view);
             WebRtcJavaScriptInterface jsInterface = new WebRtcJavaScriptInterface(webView, signalingServer);
+            jsInterface.ReceiveCandidatesClicked += () =>
+            {
+                foreach (IceCandidate iceCandidate in _iceCandidates)
+                    signalingServer.SendIceCandidate("{\"candidate\":\"" + iceCandidate.Sdp + "\"}");
+            };
 
             webView.Settings.JavaScriptEnabled = true;
             // Add C# adapter to JavaScript.

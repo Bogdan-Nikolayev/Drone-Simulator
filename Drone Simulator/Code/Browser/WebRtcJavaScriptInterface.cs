@@ -1,4 +1,5 @@
-﻿using Android.Webkit;
+﻿using System;
+using Android.Webkit;
 using Drone_Simulator.Signaling;
 using Java.Interop;
 
@@ -8,6 +9,8 @@ namespace Drone_Simulator.Browser
     {
         private readonly WebView _webView;
         private readonly WebRtcSignalingServer _signalingServer;
+
+        public event Action ReceiveCandidatesClicked;
 
         public WebRtcJavaScriptInterface(WebView webView, WebRtcSignalingServer signalingServer)
         {
@@ -43,6 +46,14 @@ namespace Drone_Simulator.Browser
             _signalingServer.SendIceCandidate(iceCandidate);
         }
 
+        [Export]
+        [JavascriptInterface]
+        // ReSharper disable once UnusedMember.Global
+        public void OnReceiveCandidatesClicked()
+        {
+            ReceiveCandidatesClicked?.Invoke();
+        }
+
         private void ReceiveOffer(string offer)
         {
             InvokeJavaScriptFunction("receiveOffer", offer);
@@ -60,6 +71,8 @@ namespace Drone_Simulator.Browser
 
         private void InvokeJavaScriptFunction(string functionName, string parameter)
         {
+            // Log.Debug("[FUNCTION TEST] " + $"javascript:{functionName}('{parameter}');");
+            
             _webView.LoadUrl($"javascript:{functionName}('{parameter}');");
         }
     }

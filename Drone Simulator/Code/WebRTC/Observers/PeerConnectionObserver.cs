@@ -50,6 +50,8 @@ namespace Drone_Simulator.WebRTC.Observers
 
         public void OnIceGatheringChange(PeerConnection.IceGatheringState p0)
         {
+            _iceCandidateObserver.OnIceGatheringChange(p0);
+
             Log.Debug(p0.Name());
         }
 

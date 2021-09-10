@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using Android.Content;
-using Android.OS;
 using Drone_Simulator.Signaling;
 using Drone_Simulator.WebRTC.Observers;
 using Xam.WebRtc.Android;
@@ -12,6 +11,7 @@ namespace Drone_Simulator.WebRTC
     {
         private readonly WebRtcSignalingServer _signalingServer;
         private bool _isInitialized;
+        private PeerConnection _peerConnection;
 
         public event Action Initialized;
         public event Action<IceCandidate> IceCandidateGathered;
@@ -50,20 +50,19 @@ namespace Drone_Simulator.WebRTC
                 .CreatePeerConnectionFactory();
             MediaStream mediaStream = factory.CreateLocalMediaStream("ARDAMS");
 
-            PeerConnection peerConnection =
+            _peerConnection =
                 factory.CreatePeerConnection(new PeerConnection.IceServer[1] {iceServer}, peerConnectionObserver);
-
 
             if (isInitiator)
             {
-                SdpObserver sdpObserver = new OfferingSdpObserver(peerConnection, _signalingServer);
-                sdpObserver.SetSuccess += () => peerConnection.InvokeIceGatheringState();
+                SdpObserver sdpObserver = new OfferingSdpObserver(_peerConnection, _signalingServer);
+                sdpObserver.SetSuccess += () => _peerConnection.InvokeIceGatheringState();
 
                 _signalingServer.AnswerReceived += answer =>
                 {
                     Log.Debug("Answer received");
 
-                    peerConnection.SetRemoteDescription(
+                    _peerConnection.SetRemoteDescription(
                         sdpObserver, new SessionDescription(SessionDescription.SdpType.Answer, answer));
                 };
 
@@ -80,22 +79,21 @@ namespace Drone_Simulator.WebRTC
                 // VideoSource videoSource = factory.CreateVideoSource(false);
                 // mediaStream.AddTrack(factory.CreateVideoTrack("ARDAMSv0", videoSource));
 
-
-                peerConnection.CreateOffer(sdpObserver, constraints);
+                _peerConnection.CreateOffer(sdpObserver, constraints);
             }
             else
             {
-                SdpObserver sdpObserver = new AnsweringSdpObserver(peerConnection, _signalingServer);
-                sdpObserver.SetSuccess += () => peerConnection.InvokeIceGatheringState();
+                SdpObserver sdpObserver = new AnsweringSdpObserver(_peerConnection, _signalingServer);
+                sdpObserver.SetSuccess += () => _peerConnection.InvokeIceGatheringState();
 
                 _signalingServer.OfferReceived += offer =>
                 {
                     Log.Debug("Offer received");
 
-                    peerConnection.SetRemoteDescription(
+                    _peerConnection.SetRemoteDescription(
                         sdpObserver, new SessionDescription(SessionDescription.SdpType.Offer, offer));
 
-                    peerConnection.CreateAnswer(sdpObserver, new MediaConstraints());
+                    _peerConnection.CreateAnswer(sdpObserver, new MediaConstraints());
                 };
             }
         }
@@ -111,6 +109,12 @@ namespace Drone_Simulator.WebRTC
             }
 
             IceCandidateGathered?.Invoke(candidate);
+        }
+
+        public void OnIceGatheringChange(PeerConnection.IceGatheringState state)
+        {
+            if (state == PeerConnection.IceGatheringState.Complete)
+                _peerConnection.Close();
         }
     }
 }
