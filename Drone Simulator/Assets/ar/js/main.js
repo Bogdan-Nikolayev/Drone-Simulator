@@ -12,7 +12,7 @@ function createPeerConnection() {
   peerConnection.addEventListener('icecandidate', function (event) {
     if (event.candidate) {
       console.log("Sending ICE candidate: " + JSON.stringify(event.candidate));
-      android.SendIceCandidate(JSON.stringify(event.candidate));
+      webRtcAndroidInterface.SendIceCandidate(JSON.stringify(event.candidate));
     }
   });
   peerConnection.addEventListener('connectionstatechange', event => {

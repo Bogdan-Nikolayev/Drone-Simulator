@@ -66,6 +66,7 @@
     <Compile Include="Code\MainActivity.cs" />
     <Compile Include="Code\Log.cs" />
     <Compile Include="Code\Browser\GrantedWebChromeClient.cs" />
+    <Compile Include="Code\MutableRunnable.cs" />
     <Compile Include="Code\Pose\PoseController.cs" />
     <Compile Include="Code\Pose\Pose.cs" />
     <Compile Include="Code\Pose\PoseJavaScriptInterface.cs" />
@@ -114,6 +115,7 @@
   <ItemGroup>
     <PackageReference Include="Xam.WebRtc.Android" Version="1.0.32006" />
     <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
   </ItemGroup>

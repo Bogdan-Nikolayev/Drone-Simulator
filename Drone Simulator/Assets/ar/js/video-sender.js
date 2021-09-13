@@ -1,6 +1,6 @@
-// setTimeout(function () {
+setTimeout(function () {
 startVideoStreaming();
-// }, 5000);
+}, 5000);
 
 function startVideoStreaming() {
   navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(
@@ -27,7 +27,7 @@ function createAndSendOffer() {
       peerConnection.setLocalDescription(offer);
 
       console.log("Sending offer: " + JSON.stringify(offer));
-      android.SendOffer(JSON.stringify(offer));
+      webRtcAndroidInterface.SendOffer(JSON.stringify(offer));
     },
     alertError);
 }

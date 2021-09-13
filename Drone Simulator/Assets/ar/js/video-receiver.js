@@ -1,4 +1,7 @@
-﻿window.onload = subscribeToRemoteMediaStream;
+﻿// window.onload = subscribeToRemoteMediaStream;
+this.addEventListener("arjs-video-loaded", () => {
+    subscribeToRemoteMediaStream();
+});
 
 function subscribeToRemoteMediaStream() {
   let remoteStream = new MediaStream();
@@ -25,7 +28,7 @@ function createAndSendAnswer() {
       peerConnection.setLocalDescription(answer);
 
       console.log("Sending answer: " + JSON.stringify(answer));
-      android.SendAnswer(JSON.stringify(answer));
+      webRtcAndroidInterface.SendAnswer(JSON.stringify(answer));
     },
     alertError);
 }

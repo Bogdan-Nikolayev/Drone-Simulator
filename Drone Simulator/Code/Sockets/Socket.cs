@@ -5,30 +5,35 @@ using Java.Lang;
 
 namespace Drone_Simulator.Sockets
 {
+    // TODO: Refactoring.
     public abstract class Socket : ISocket
     {
         protected Java.Net.Socket _socket;
-        private readonly object _lockObject = new object();
+        private readonly object _outputLock = new object();
+        private DataOutputStream _outputStream;
 
         public event SocketMessageHandler StringReceived;
 
-        public void SendString(sbyte messageType, string message)
+        public void SendString(sbyte messageType, string message, bool log = true)
         {
-            // lock (_lockObject)
-            // {
-            using DataOutputStream stream = new DataOutputStream(_socket.OutputStream);
-            byte[] bytes = Encoding.UTF8.GetBytes(message);
-            // 1 byte from "messageType".
-            stream.WriteInt(bytes.Length + 1);
-            stream.WriteByte(messageType);
-            stream.Write(bytes);
+            lock (_outputLock)
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(message);
+                // 1 byte from "messageType".
+                _outputStream.WriteInt(bytes.Length + 1);
+                _outputStream.WriteByte(messageType);
+                _outputStream.Write(bytes);
+                _outputStream.Flush();
 
-            Log.Debug("Sent: " + message);
-            // }
+                if (log)
+                    Log.Debug("Sent: " + message);
+            }
         }
 
         protected void StartListening()
         {
+            _outputStream = new DataOutputStream(_socket.OutputStream);
+
             Thread thread = new Thread(new Runnable(() =>
             {
                 using DataInputStream inputStream = new DataInputStream(_socket.InputStream);
@@ -52,6 +57,7 @@ namespace Drone_Simulator.Sockets
                     }
 
                     string message = Encoding.UTF8.GetString(outputStream.ToByteArray());
+                    outputStream.Reset();
 
                     // Run in UI thread.
                     new Handler(Looper.MainLooper).Post(() => StringReceived?.Invoke(messageType, message));

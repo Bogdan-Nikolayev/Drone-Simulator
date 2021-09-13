@@ -38,6 +38,15 @@ namespace Drone_Simulator
             SubscribeToViewEvents();
         }
 
+        // Uncomment if you need some permission for Xamarin.Essentials.
+        // public override void OnRequestPermissionsResult(
+        //     int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
+        // {
+        //     Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        //
+        //     base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        // }
+
         private void RequestPermissions()
         {
             if (!this.AllOfPermissionsGranted(Manifest.Permission.AccessFineLocation, Manifest.Permission.Camera))
@@ -48,8 +57,8 @@ namespace Drone_Simulator
         private void SubscribeToViewEvents()
         {
             // TODO: Remove this button.
-            Button openWebViewButton = FindViewById<Button>(Resource.Id.button_open_web_view);
-            openWebViewButton.Click += (sender, args) => OpenWebView("ar.html", null);
+            // Button openWebViewButton = FindViewById<Button>(Resource.Id.button_open_web_view);
+            // openWebViewButton.Click += (sender, args) => OpenWebView("ar.html", null);
 
             _wifiDirect = (WifiDirectFragment)SupportFragmentManager.FindFragmentById(Resource.Id.fragment_wifi_direct);
             _wifiDirect.Connected += ConnectSocketsAndOpenWebView;
@@ -78,8 +87,10 @@ namespace Drone_Simulator
         private void GetIceCandidatesThenOpenWebView(bool isGroupOwner, ISocket socket)
         {
             WebRtcSignalingServer signalingServer = new WebRtcSignalingServer(socket);
-            RunOnUiThread(() => OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer));
+            RunOnUiThread(() =>
+                OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", isGroupOwner, signalingServer));
 
+            // TODO: Remove if not required.
             // WebRtcIceCandidatesCollector webRtcIceCandidatesCollector = new WebRtcIceCandidatesCollector(
             //     this, isGroupOwner, new WebRtcSignalingServer(socket));
             //
@@ -93,7 +104,8 @@ namespace Drone_Simulator
             //     candidate => _iceCandidates.Add(candidate);
         }
 
-        private void OpenWebView(string htmlPage, WebRtcSignalingServer signalingServer)
+        // TODO: Refactoring.
+        private void OpenWebView(string htmlPage, bool isGroupOwner, WebRtcSignalingServer signalingServer)
         {
             WebView webView = FindViewById<WebView>(Resource.Id.web_view);
             WebRtcJavaScriptInterface webRtcInterface = new WebRtcJavaScriptInterface(webView, signalingServer);
@@ -107,11 +119,13 @@ namespace Drone_Simulator
             PoseJavaScriptInterface poseInterface = new PoseJavaScriptInterface(webView);
             PoseController poseController = new PoseController(poseInterface, new PoseSocketDecorator(_socket));
             poseController.StartCommunication();
+            if (isGroupOwner)
+                poseController.ToggleOrientationSensor();
 
             webView.Settings.JavaScriptEnabled = true;
             // Add C# adapter to JavaScript.
-            webView.AddJavascriptInterface(webRtcInterface, "android");
-            webView.AddJavascriptInterface(poseInterface, "android");
+            webView.AddJavascriptInterface(webRtcInterface, "webRtcAndroidInterface");
+            webView.AddJavascriptInterface(poseInterface, "poseAndroidInterface");
             // Provide the required permissions.
             webView.SetWebChromeClient(new GrantedWebChromeClient());
 

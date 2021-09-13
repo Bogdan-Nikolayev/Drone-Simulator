@@ -4,7 +4,7 @@
 
     public interface ISocket
     {
-        void SendString(sbyte messageType, string message);
+        void SendString(sbyte messageType, string message, bool log = true);
 
         event SocketMessageHandler StringReceived;
     }
