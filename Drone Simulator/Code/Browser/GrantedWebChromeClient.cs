@@ -17,9 +17,10 @@ namespace Drone_Simulator.Browser
 
         public override bool OnConsoleMessage(ConsoleMessage? consoleMessage)
         {
-            // TODO: Add JS tag and remove tag from JS.
-            Log.Debug(consoleMessage.Message() + " : " + consoleMessage.LineNumber() + " of " +
-                consoleMessage.SourceId());
+            Log.Debug(
+                $"[JavaScript][{consoleMessage.InvokeMessageLevel()}] {consoleMessage.Message()} " +
+                $"[{consoleMessage.SourceId()}:{consoleMessage.LineNumber()}]");
+
             return true;
         }
     }

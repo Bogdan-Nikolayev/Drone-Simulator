@@ -7,20 +7,20 @@ namespace Drone_Simulator.Pose
     {
         private readonly SensorSpeed _speed = SensorSpeed.UI;
         private readonly PoseJavaScriptInterface _javaScriptInterface;
-        private readonly PoseSocket _socket;
+        private readonly PoseSocketDecorator _socketDecorator;
 
-        public PoseController(PoseJavaScriptInterface javaScriptInterface, PoseSocket socket)
+        public PoseController(PoseJavaScriptInterface javaScriptInterface, PoseSocketDecorator socketDecorator)
         {
             _javaScriptInterface = javaScriptInterface;
-            _socket = socket;
-            _socket.PoseReceived += SendPoseToJavaScript;
+            _socketDecorator = socketDecorator;
+            _socketDecorator.PoseReceived += SendPoseToWebView;
 
             OrientationSensor.ReadingChanged += SendOrientation;
         }
 
-        private void SendPoseToJavaScript(Pose pose)
+        private void SendPoseToWebView(Pose pose)
         {
-            // _javaScriptInterface.
+            _javaScriptInterface.ReceivePose(pose);
         }
 
         private void SendOrientation(object sender, OrientationSensorChangedEventArgs e)
@@ -29,7 +29,7 @@ namespace Drone_Simulator.Pose
             Console.WriteLine(
                 $"Reading: X: {data.Orientation.X}, Y: {data.Orientation.Y}, Z: {data.Orientation.Z}, W: {data.Orientation.W}");
 
-            _socket.SendPose(new Pose(data.Orientation.X, data.Orientation.Y, data.Orientation.Z));
+            _socketDecorator.SendPose(new Pose(data.Orientation.X, data.Orientation.Y, data.Orientation.Z));
             // Process Orientation quaternion (X, Y, Z, and W)
         }
 

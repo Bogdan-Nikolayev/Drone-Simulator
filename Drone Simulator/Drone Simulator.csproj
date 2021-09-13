@@ -61,6 +61,7 @@
     <Compile Include="Code\Browser\JavaScriptInterface.cs" />
     <Compile Include="Code\Constants.cs" />
     <Compile Include="Code\Extensions\ActivityExtensions.cs" />
+    <Compile Include="Code\Extensions\PoseExtensions.cs" />
     <Compile Include="Code\Extensions\WifiDirectExtensions.cs" />
     <Compile Include="Code\MainActivity.cs" />
     <Compile Include="Code\Log.cs" />
@@ -69,7 +70,7 @@
     <Compile Include="Code\Pose\Pose.cs" />
     <Compile Include="Code\Pose\PoseJavaScriptInterface.cs" />
     <Compile Include="Code\Pose\PoseMessageType.cs" />
-    <Compile Include="Code\Pose\PoseSocket.cs" />
+    <Compile Include="Code\Pose\PoseSocketDecorator.cs" />
     <Compile Include="Code\Sockets\ISocket.cs" />
     <Compile Include="Code\Sockets\ClientSocket.cs" />
     <Compile Include="Code\Sockets\ServerSocket.cs" />

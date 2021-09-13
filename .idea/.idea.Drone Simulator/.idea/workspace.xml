@@ -37,6 +37,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/2b/2e584d93/WebChromeClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/3e/d3b7b2d5/WifiP2pDeviceList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/f5/850a4d9c/WifiP2pFailureReason.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/01/6b2a0f08/ConsoleMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FEFEE6C2-C695-4590-88A9-DF092723E052/3c/e4a44acb/FragmentActivity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/3c/57179f96/InputStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58DCCD53-33A7-48CA-8E43-8A2C600C06D9/0c/f1839582/AppCompatActivity.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,8 +77,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/Sockets/WifiDirectClientSocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/WifiDirectClientSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/WifiDirectServerSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptWebRtcInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectDeviceListAdapter.cs" />
@@ -108,7 +107,6 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcIceCandidatesCollector.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/GrantedWebChromeClient.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/ar-js-controller.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
@@ -119,14 +117,17 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/GyroscopeSender.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/Pose.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseSocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseJavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/main.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/Native/WebRtcIceCandidatesCollector.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcJavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseJavaScriptInterface.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/GrantedWebChromeClient.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseController.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Extensions/PoseExtensions.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseSocket.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -197,7 +198,7 @@
       <workItem from="1631099480021" duration="15311000" />
       <workItem from="1631264840881" duration="11286000" />
       <workItem from="1631278836970" duration="18441000" />
-      <workItem from="1631525795970" duration="8592000" />
+      <workItem from="1631525795970" duration="9976000" />
     </task>
     <servers />
   </component>
