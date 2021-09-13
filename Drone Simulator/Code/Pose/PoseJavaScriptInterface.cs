@@ -12,10 +12,9 @@ namespace Drone_Simulator.Pose
 
         [Export]
         [JavascriptInterface]
-        // ReSharper disable once UnusedMember.Global
-        public void ReceivePose(Pose pose)
+        public void ReceivePose(string pose)
         {
-            InvokeJavaScriptFunction("receivePose", pose.ToString());
+            InvokeJavaScriptFunction("receivePose", pose);
         }
     }
 }

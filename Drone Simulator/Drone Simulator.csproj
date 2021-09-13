@@ -113,8 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xam.WebRtc.Android" Version="1.0.32006" />
+    <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ar\ar.html" />

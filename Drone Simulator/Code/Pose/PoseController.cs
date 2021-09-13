@@ -1,8 +1,10 @@
 ﻿using System;
+using Drone_Simulator.Extensions;
 using Xamarin.Essentials;
 
 namespace Drone_Simulator.Pose
 {
+    // TODO: Rename class to more meaningful name.
     public class PoseController
     {
         private readonly SensorSpeed _speed = SensorSpeed.UI;
@@ -13,24 +15,14 @@ namespace Drone_Simulator.Pose
         {
             _javaScriptInterface = javaScriptInterface;
             _socketDecorator = socketDecorator;
-            _socketDecorator.PoseReceived += SendPoseToWebView;
 
-            OrientationSensor.ReadingChanged += SendOrientation;
+            Log.Debug(OrientationSensor.IsMonitoring);
         }
 
-        private void SendPoseToWebView(Pose pose)
+        public void StartCommunication()
         {
-            _javaScriptInterface.ReceivePose(pose);
-        }
-
-        private void SendOrientation(object sender, OrientationSensorChangedEventArgs e)
-        {
-            OrientationSensorData data = e.Reading;
-            Console.WriteLine(
-                $"Reading: X: {data.Orientation.X}, Y: {data.Orientation.Y}, Z: {data.Orientation.Z}, W: {data.Orientation.W}");
-
-            _socketDecorator.SendPose(new Pose(data.Orientation.X, data.Orientation.Y, data.Orientation.Z));
-            // Process Orientation quaternion (X, Y, Z, and W)
+            _socketDecorator.PoseReceived += ReceivePoseByWebView;
+            OrientationSensor.ReadingChanged += SendPose;
         }
 
         public void ToggleOrientationSensor()
@@ -50,6 +42,20 @@ namespace Drone_Simulator.Pose
             {
                 // Other error has occurred.
             }
+        }
+
+        private void SendPose(object sender, OrientationSensorChangedEventArgs e)
+        {
+            OrientationSensorData data = e.Reading;
+            Log.Debug(
+                $"Reading: X: {data.Orientation.X}, Y: {data.Orientation.Y}, Z: {data.Orientation.Z}, W: {data.Orientation.W}");
+
+            _socketDecorator.SendPose(new Pose(data.Orientation.X, data.Orientation.Y, data.Orientation.Z));
+        }
+
+        private void ReceivePoseByWebView(Pose pose)
+        {
+            _javaScriptInterface.ReceivePose(pose.ToJson());
         }
     }
 }
