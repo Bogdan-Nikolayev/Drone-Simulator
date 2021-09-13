@@ -9,9 +9,9 @@ using Android.Webkit;
 using Android.Widget;
 using Drone_Simulator.Browser;
 using Drone_Simulator.Extensions;
-using Drone_Simulator.Signaling;
 using Drone_Simulator.Sockets;
 using Drone_Simulator.WebRTC;
+using Drone_Simulator.WebRTC.Signaling;
 using Drone_Simulator.WifiDirect;
 using Java.Lang;
 using Xam.WebRtc.Android;
@@ -22,7 +22,7 @@ namespace Drone_Simulator
     public class MainActivity : AppCompatActivity
     {
         private IWifiDirectHandler _wifiDirect;
-        private List<IceCandidate> _iceCandidates = new List<IceCandidate>();
+        private readonly List<IceCandidate> _iceCandidates = new List<IceCandidate>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

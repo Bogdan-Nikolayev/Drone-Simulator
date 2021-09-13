@@ -1,4 +1,4 @@
-﻿namespace Drone_Simulator.Signaling
+﻿namespace Drone_Simulator.WebRTC.Signaling
 {
     public enum WebRtcMessageType : sbyte
     {

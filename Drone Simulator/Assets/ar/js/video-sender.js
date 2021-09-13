@@ -1,6 +1,6 @@
-setTimeout(function () {
-    startVideoStreaming();
-}, 5000);
+// setTimeout(function () {
+startVideoStreaming();
+// }, 5000);
 
 function startVideoStreaming() {
   navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(
@@ -17,23 +17,23 @@ function startVideoStreaming() {
 
 function createAndSendOffer() {
   // TODO: Remove if not required.
-    var mediaConstraints = {
-        'offerToReceiveAudio': true,
-        'offerToReceiveVideo': true
-    };
+/*   var mediaConstraints = {
+    'offerToReceiveAudio': true,
+    'offerToReceiveVideo': true
+  }; */
 
-  peerConnection.createOffer(mediaConstraints).then(
+  peerConnection.createOffer().then(
     function (offer) {
       peerConnection.setLocalDescription(offer);
 
-      log("Sending offer: " + JSON.stringify(offer));
+      console.log("Sending offer: " + JSON.stringify(offer));
       android.SendOffer(JSON.stringify(offer));
     },
     alertError);
 }
 
 function receiveAnswer(answer) {
-  log("Received answer: " + escapeCRLF(answer));
+  console.log("Received answer: " + escapeCRLF(answer));
 
   peerConnection.setRemoteDescription(JSON.parse(escapeCRLF(answer)));
 }

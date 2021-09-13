@@ -1,9 +1,7 @@
 ﻿using System;
-using Drone_Simulator.Browser;
 using Drone_Simulator.Sockets;
-using Xam.WebRtc.Android;
 
-namespace Drone_Simulator.Signaling
+namespace Drone_Simulator.WebRTC.Signaling
 {
     public class WebRtcSignalingServer
     {

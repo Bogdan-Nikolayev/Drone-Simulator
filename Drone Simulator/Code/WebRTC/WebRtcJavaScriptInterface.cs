@@ -1,20 +1,20 @@
 ﻿using System;
 using Android.Webkit;
-using Drone_Simulator.Signaling;
+using Drone_Simulator.Browser;
+using Drone_Simulator.WebRTC.Signaling;
 using Java.Interop;
 
-namespace Drone_Simulator.Browser
+namespace Drone_Simulator.WebRTC
 {
-    public class WebRtcJavaScriptInterface : Java.Lang.Object
+    public class WebRtcJavaScriptInterface : JavaScriptInterface
     {
-        private readonly WebView _webView;
         private readonly WebRtcSignalingServer _signalingServer;
 
+        // TODO: Remove if not required.
         public event Action ReceiveCandidatesClicked;
 
-        public WebRtcJavaScriptInterface(WebView webView, WebRtcSignalingServer signalingServer)
+        public WebRtcJavaScriptInterface(WebView webView, WebRtcSignalingServer signalingServer) : base(webView)
         {
-            _webView = webView;
             _signalingServer = signalingServer;
 
             _signalingServer.OfferReceived += ReceiveOffer;
@@ -48,12 +48,14 @@ namespace Drone_Simulator.Browser
 
         [Export]
         [JavascriptInterface]
+        // TODO: Remove if not required.
         // ReSharper disable once UnusedMember.Global
         public void OnReceiveCandidatesClicked()
         {
             ReceiveCandidatesClicked?.Invoke();
         }
 
+        // TODO: Remove if not required.
         public void StartVideoStreaming()
         {
             InvokeJavaScriptFunction("startVideoStreaming");
@@ -72,16 +74,6 @@ namespace Drone_Simulator.Browser
         private void ReceiveIceCandidate(string iceCandidate)
         {
             InvokeJavaScriptFunction("receiveIceCandidate", iceCandidate);
-        }
-
-        private void InvokeJavaScriptFunction(string functionName, params string[] parameters)
-        {
-            _webView.LoadUrl($"javascript:{functionName}('" + string.Join(", ", parameters) + "');");
-        }
-
-        private void InvokeJavaScriptFunction(string functionName)
-        {
-            _webView.LoadUrl($"javascript:{functionName}();");
         }
     }
 }

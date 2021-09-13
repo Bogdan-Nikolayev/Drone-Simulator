@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections;
 using Android.Content;
-using Android.OS;
-using Drone_Simulator.Signaling;
-using Drone_Simulator.WebRTC.Observers;
+using Drone_Simulator.WebRTC.Native.Observers;
+using Drone_Simulator.WebRTC.Signaling;
 using Xam.WebRtc.Android;
 
-namespace Drone_Simulator.WebRTC
+namespace Drone_Simulator.WebRTC.Native
 {
+    // TODO: Refactoring.
     public class WebRtcIceCandidatesCollector : IIceCandidateObserver
     {
         private readonly WebRtcSignalingServer _signalingServer;
+        private readonly PeerConnection _peerConnection;
         private bool _isInitialized;
-        private PeerConnection _peerConnection;
 
         public event Action Initialized;
         public event Action<IceCandidate> IceCandidateGathered;
@@ -37,7 +37,7 @@ namespace Drone_Simulator.WebRTC
             PeerConnectionObserver peerConnectionObserver = new PeerConnectionObserver(this);
 
             IEglBase rootEglBase = EglBase.Create();
-            PeerConnectionFactory.Options options = new PeerConnectionFactory.Options()
+            PeerConnectionFactory.Options options = new PeerConnectionFactory.Options
             {
                 DisableEncryption = true,
                 DisableNetworkMonitor = true
@@ -52,7 +52,7 @@ namespace Drone_Simulator.WebRTC
             MediaStream mediaStream = factory.CreateLocalMediaStream("ARDAMS");
 
             _peerConnection =
-                factory.CreatePeerConnection(new PeerConnection.IceServer[] {}, peerConnectionObserver);
+                factory.CreatePeerConnection(new PeerConnection.IceServer[] { }, peerConnectionObserver);
 
             if (isInitiator)
             {
@@ -68,13 +68,13 @@ namespace Drone_Simulator.WebRTC
                 };
 
 
-                MediaConstraints constraints = new MediaConstraints()
+                MediaConstraints constraints = new MediaConstraints
                 {
                     Mandatory = new ArrayList
                     {
                         // new MediaConstraints.KeyValuePair("maxWidth", "1024"),
                         // new MediaConstraints.KeyValuePair("maxHeight", "768"),
-                        new MediaConstraints.KeyValuePair("OfferToReceiveAudio", "true"),
+                        new MediaConstraints.KeyValuePair("OfferToReceiveAudio", "true")
                     }
                 };
                 // VideoSource videoSource = factory.CreateVideoSource(false);
@@ -107,17 +107,13 @@ namespace Drone_Simulator.WebRTC
         public void OnIceGatheringChange(PeerConnection.IceGatheringState state)
         {
             if (state == PeerConnection.IceGatheringState.Complete)
-            {
                 Initialize();
-            }
         }
 
         public void OnIceConnectionChange(PeerConnection.IceConnectionState state)
         {
             if (state == PeerConnection.IceConnectionState.Closed)
-            {
                 Initialize();
-            }
         }
 
         public void CloseConnection()
@@ -129,7 +125,7 @@ namespace Drone_Simulator.WebRTC
             if (!_isInitialized)
             {
                 _signalingServer.ClearEventSubscriptions();
-                
+
                 _isInitialized = true;
                 Initialized?.Invoke();
             }

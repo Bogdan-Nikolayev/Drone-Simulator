@@ -1,6 +1,6 @@
 ﻿using Xam.WebRtc.Android;
 
-namespace Drone_Simulator.WebRTC.Observers
+namespace Drone_Simulator.WebRTC.Native.Observers
 {
     public interface IIceCandidateObserver
     {

@@ -8,11 +8,14 @@ namespace Drone_Simulator.Sockets
     public abstract class Socket : ISocket
     {
         protected Java.Net.Socket _socket;
+        private readonly object _lockObject = new object();
 
         public event SocketMessageHandler StringReceived;
 
         public void SendString(sbyte messageType, string message)
         {
+            // lock (_lockObject)
+            // {
             using DataOutputStream stream = new DataOutputStream(_socket.OutputStream);
             byte[] bytes = Encoding.UTF8.GetBytes(message);
             // 1 byte from "messageType".
@@ -21,8 +24,8 @@ namespace Drone_Simulator.Sockets
             stream.Write(bytes);
 
             Log.Debug("Sent: " + message);
+            // }
         }
-
 
         protected void StartListening()
         {

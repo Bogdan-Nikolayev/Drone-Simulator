@@ -1,7 +1,7 @@
-﻿using Drone_Simulator.Signaling;
+﻿using Drone_Simulator.WebRTC.Signaling;
 using Xam.WebRtc.Android;
 
-namespace Drone_Simulator.WebRTC.Observers
+namespace Drone_Simulator.WebRTC.Native.Observers
 {
     public class AnsweringSdpObserver : SdpObserver
     {

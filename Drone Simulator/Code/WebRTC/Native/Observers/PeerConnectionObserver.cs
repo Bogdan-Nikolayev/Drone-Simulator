@@ -1,8 +1,9 @@
-﻿using Xam.WebRtc.Android;
+﻿using Java.Lang;
+using Xam.WebRtc.Android;
 
-namespace Drone_Simulator.WebRTC.Observers
+namespace Drone_Simulator.WebRTC.Native.Observers
 {
-    public class PeerConnectionObserver : Java.Lang.Object, PeerConnection.IObserver
+    public class PeerConnectionObserver : Object, PeerConnection.IObserver
     {
         private readonly IIceCandidateObserver _iceCandidateObserver;
 

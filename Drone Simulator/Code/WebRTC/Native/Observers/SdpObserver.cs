@@ -1,8 +1,8 @@
 ﻿using System;
-using Drone_Simulator.Signaling;
+using Drone_Simulator.WebRTC.Signaling;
 using Xam.WebRtc.Android;
 
-namespace Drone_Simulator.WebRTC.Observers
+namespace Drone_Simulator.WebRTC.Native.Observers
 {
     public class SdpObserver : Java.Lang.Object, ISdpObserver
     {
@@ -38,7 +38,7 @@ namespace Drone_Simulator.WebRTC.Observers
         public void OnSetSuccess()
         {
             Log.Debug();
-            
+
             SetSuccess?.Invoke();
         }
     }

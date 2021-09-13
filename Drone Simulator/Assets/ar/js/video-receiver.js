@@ -6,14 +6,13 @@ function subscribeToRemoteMediaStream() {
   video.srcObject = remoteStream;
 
   peerConnection.addEventListener('track', function (event) {
-    log("Added remote track");
-
+    console.log("Adding remote track");
     remoteStream.addTrack(event.track);
   });
 }
 
 function receiveOffer(offer) {
-  log("Received offer: " + escapeCRLF(offer));
+  console.log("Received offer: " + escapeCRLF(offer));
 
   peerConnection.setRemoteDescription(JSON.parse(escapeCRLF(offer))).then(
     createAndSendAnswer,
@@ -25,7 +24,7 @@ function createAndSendAnswer() {
     function (answer) {
       peerConnection.setLocalDescription(answer);
 
-      log("Sending answer: " + JSON.stringify(answer));
+      console.log("Sending answer: " + JSON.stringify(answer));
       android.SendAnswer(JSON.stringify(answer));
     },
     alertError);
