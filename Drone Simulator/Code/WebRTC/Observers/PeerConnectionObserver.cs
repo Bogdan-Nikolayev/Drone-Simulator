@@ -41,6 +41,8 @@ namespace Drone_Simulator.WebRTC.Observers
         public void OnIceConnectionChange(PeerConnection.IceConnectionState p0)
         {
             Log.Debug(p0.Name());
+
+            _iceCandidateObserver.OnIceConnectionChange(p0);
         }
 
         public void OnIceConnectionReceivingChange(bool p0)
@@ -50,9 +52,9 @@ namespace Drone_Simulator.WebRTC.Observers
 
         public void OnIceGatheringChange(PeerConnection.IceGatheringState p0)
         {
-            _iceCandidateObserver.OnIceGatheringChange(p0);
-
             Log.Debug(p0.Name());
+
+            _iceCandidateObserver.OnIceGatheringChange(p0);
         }
 
         public void OnRemoveStream(MediaStream p0)

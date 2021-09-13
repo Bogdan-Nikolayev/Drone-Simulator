@@ -8,7 +8,7 @@ namespace Drone_Simulator.Sockets
         {
             Java.Net.ServerSocket serverSocket = new Java.Net.ServerSocket(port);
             _socket = serverSocket.Accept();
-            
+
             StartListening();
         }
     }

@@ -1,4 +1,6 @@
-startVideoStreaming();
+setTimeout(function () {
+    startVideoStreaming();
+}, 5000);
 
 function startVideoStreaming() {
   navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(
@@ -14,7 +16,13 @@ function startVideoStreaming() {
 }
 
 function createAndSendOffer() {
-  peerConnection.createOffer().then(
+  // TODO: Remove if not required.
+    var mediaConstraints = {
+        'offerToReceiveAudio': true,
+        'offerToReceiveVideo': true
+    };
+
+  peerConnection.createOffer(mediaConstraints).then(
     function (offer) {
       peerConnection.setLocalDescription(offer);
 

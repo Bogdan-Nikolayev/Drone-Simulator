@@ -54,6 +54,11 @@ namespace Drone_Simulator.Browser
             ReceiveCandidatesClicked?.Invoke();
         }
 
+        public void StartVideoStreaming()
+        {
+            InvokeJavaScriptFunction("startVideoStreaming");
+        }
+
         private void ReceiveOffer(string offer)
         {
             InvokeJavaScriptFunction("receiveOffer", offer);
@@ -69,11 +74,14 @@ namespace Drone_Simulator.Browser
             InvokeJavaScriptFunction("receiveIceCandidate", iceCandidate);
         }
 
-        private void InvokeJavaScriptFunction(string functionName, string parameter)
+        private void InvokeJavaScriptFunction(string functionName, params string[] parameters)
         {
-            // Log.Debug("[FUNCTION TEST] " + $"javascript:{functionName}('{parameter}');");
-            
-            _webView.LoadUrl($"javascript:{functionName}('{parameter}');");
+            _webView.LoadUrl($"javascript:{functionName}('" + string.Join(", ", parameters) + "');");
+        }
+
+        private void InvokeJavaScriptFunction(string functionName)
+        {
+            _webView.LoadUrl($"javascript:{functionName}();");
         }
     }
 }

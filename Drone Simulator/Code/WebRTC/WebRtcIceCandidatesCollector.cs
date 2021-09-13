@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Android.Content;
+using Android.OS;
 using Drone_Simulator.Signaling;
 using Drone_Simulator.WebRTC.Observers;
 using Xam.WebRtc.Android;
@@ -51,7 +52,7 @@ namespace Drone_Simulator.WebRTC
             MediaStream mediaStream = factory.CreateLocalMediaStream("ARDAMS");
 
             _peerConnection =
-                factory.CreatePeerConnection(new PeerConnection.IceServer[1] {iceServer}, peerConnectionObserver);
+                factory.CreatePeerConnection(new PeerConnection.IceServer[] {}, peerConnectionObserver);
 
             if (isInitiator)
             {
@@ -100,21 +101,38 @@ namespace Drone_Simulator.WebRTC
 
         public void OnIceCandidate(IceCandidate candidate)
         {
-            if (!_isInitialized)
-            {
-                _signalingServer.ClearEventSubscriptions();
-
-                _isInitialized = true;
-                Initialized?.Invoke();
-            }
-
             IceCandidateGathered?.Invoke(candidate);
         }
 
         public void OnIceGatheringChange(PeerConnection.IceGatheringState state)
         {
             if (state == PeerConnection.IceGatheringState.Complete)
-                _peerConnection.Close();
+            {
+                Initialize();
+            }
+        }
+
+        public void OnIceConnectionChange(PeerConnection.IceConnectionState state)
+        {
+            if (state == PeerConnection.IceConnectionState.Closed)
+            {
+                Initialize();
+            }
+        }
+
+        public void CloseConnection()
+        {
+        }
+
+        private void Initialize()
+        {
+            if (!_isInitialized)
+            {
+                _signalingServer.ClearEventSubscriptions();
+                
+                _isInitialized = true;
+                Initialized?.Invoke();
+            }
         }
     }
 }

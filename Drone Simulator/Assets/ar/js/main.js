@@ -8,6 +8,7 @@ function createPeerConnection()
     }]
   };
   let peerConnection = new RTCPeerConnection(config);
+  // let peerConnection = new RTCPeerConnection();
 
   peerConnection.addEventListener('icecandidate', function (event) {
     if (event.candidate) {

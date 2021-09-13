@@ -75,19 +75,19 @@ namespace Drone_Simulator
         {
             WebRtcSignalingServer signalingServer = new WebRtcSignalingServer(socket);
 
-            // RunOnUiThread(() => OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer));
+            RunOnUiThread(() => OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer));
 
-            WebRtcIceCandidatesCollector webRtcIceCandidatesCollector = new WebRtcIceCandidatesCollector(
-                this, isGroupOwner, new WebRtcSignalingServer(socket));
-
-            webRtcIceCandidatesCollector.Initialized += () =>
-            {
-                Thread.Sleep(5000);
-
-                RunOnUiThread(() => OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer));
-            };
-            webRtcIceCandidatesCollector.IceCandidateGathered +=
-                candidate => _iceCandidates.Add(candidate);
+            // WebRtcIceCandidatesCollector webRtcIceCandidatesCollector = new WebRtcIceCandidatesCollector(
+            //     this, isGroupOwner, new WebRtcSignalingServer(socket));
+            //
+            // webRtcIceCandidatesCollector.Initialized += () =>
+            // {
+            //     Log.Debug("Initialized callback");
+            //     RunOnUiThread(() => OpenWebView(isGroupOwner ? "video-recorder.html" : "ar.html", signalingServer));
+            //     webRtcIceCandidatesCollector.CloseConnection();
+            // };
+            // webRtcIceCandidatesCollector.IceCandidateGathered +=
+            //     candidate => _iceCandidates.Add(candidate);
         }
 
         private void OpenWebView(string htmlPage, WebRtcSignalingServer signalingServer)
@@ -97,7 +97,8 @@ namespace Drone_Simulator
             jsInterface.ReceiveCandidatesClicked += () =>
             {
                 foreach (IceCandidate iceCandidate in _iceCandidates)
-                    signalingServer.SendIceCandidate("{\"candidate\":\"" + iceCandidate.Sdp + "\"}");
+                    signalingServer.SendIceCandidate("{\"candidate\":\"" + iceCandidate.Sdp +
+                        "\",\"sdpMid\":\"0\",\"sdpMLineIndex\":0}");
             };
 
             webView.Settings.JavaScriptEnabled = true;

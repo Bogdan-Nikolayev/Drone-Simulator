@@ -6,5 +6,6 @@ namespace Drone_Simulator.WebRTC.Observers
     {
         void OnIceCandidate(IceCandidate candidate);
         void OnIceGatheringChange(PeerConnection.IceGatheringState state);
+        void OnIceConnectionChange(PeerConnection.IceConnectionState state);
     }
 }
