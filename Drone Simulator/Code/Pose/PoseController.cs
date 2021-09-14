@@ -55,7 +55,6 @@ namespace Drone_Simulator.Pose
 
         private void SendPose(object sender, OrientationSensorChangedEventArgs e)
         {
-            Log.Debug(_isRunning);
             _runnable.Action = () =>
             {
                 Quaternion orientation = e.Reading.Orientation;

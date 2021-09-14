@@ -1,6 +1,6 @@
 ﻿let camera;
 
-window.onload = function (){
+window.onload = function () {
     camera = document.getElementsByTagName("a-camera")[0];
 }
 
@@ -11,21 +11,21 @@ function receivePose(poseJSON) {
 }
 
 function setRotation(x, y, z) {
-    if (camera)
-    {
+    if (camera) {
         // x = THREE.Math.radToDeg(x);
         // y = THREE.Math.degToRad(y);
-        
-        console.log(x + " " + y + " " + z);
-        
+        let xn = x * 180;
+        let yn = y * 180;
+        let zn = z * 180;
+
+        console.log(xn + " " + yn + " " + zn);
+
         camera.parentElement.object3D.rotation.set(
-            x,
-            y,
-            z
+            THREE.Math.degToRad(xn),
+            THREE.Math.degToRad(yn),
+            THREE.Math.degToRad(zn)
         );
-    }
-    else
-    {
+    } else {
         console.log("Camera is not set");
     }
 }
