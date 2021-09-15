@@ -1,6 +1,6 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 using Drone_Simulator.Extensions;
-using Java.Lang;
 using Java.Util.Concurrent;
 using Xamarin.Essentials;
 
@@ -47,7 +47,7 @@ namespace Drone_Simulator.Pose
             {
                 // Feature not supported on device
             }
-            catch (System.Exception exception)
+            catch (Exception exception)
             {
                 // Other error has occurred.
             }

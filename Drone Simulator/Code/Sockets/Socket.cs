@@ -29,7 +29,7 @@ namespace Drone_Simulator.Sockets
 
         protected void StartListening()
         {
-            Java.Lang.Thread thread = new Java.Lang.Thread(new Runnable(() =>
+            Thread thread = new Thread(new Runnable(() =>
             {
                 using DataInputStream inputStream = new DataInputStream(_socket.InputStream);
                 while (true)

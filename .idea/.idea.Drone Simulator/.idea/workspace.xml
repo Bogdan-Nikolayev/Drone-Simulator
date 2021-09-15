@@ -116,8 +116,6 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MutableRunnable.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/main.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ISocket.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseSocketDecorator.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/ar-js-controller.js" />
@@ -132,6 +130,8 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Extensions/PoseExtensions.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/Native/WebRtcIceCandidatesCollector.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -207,7 +207,7 @@
       <workItem from="1631614628687" duration="6004000" />
       <workItem from="1631624145347" duration="475000" />
       <workItem from="1631624944021" duration="16275000" />
-      <workItem from="1631696307464" duration="4255000" />
+      <workItem from="1631696307464" duration="4627000" />
     </task>
     <servers />
   </component>

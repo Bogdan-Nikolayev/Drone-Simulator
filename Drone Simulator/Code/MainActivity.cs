@@ -6,7 +6,6 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Webkit;
-using Android.Widget;
 using Drone_Simulator.Browser;
 using Drone_Simulator.Extensions;
 using Drone_Simulator.Pose;
@@ -16,6 +15,7 @@ using Drone_Simulator.WebRTC.Signaling;
 using Drone_Simulator.WifiDirect;
 using Java.Lang;
 using Xam.WebRtc.Android;
+using Xamarin.Essentials;
 
 namespace Drone_Simulator
 {
@@ -33,7 +33,7 @@ namespace Drone_Simulator
         {
             base.OnCreate(savedInstanceState);
 
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Platform.Init(this, savedInstanceState);
             RequestPermissions();
             SetContentView(Resource.Layout.activity_main);
             SubscribeToViewEvents();
