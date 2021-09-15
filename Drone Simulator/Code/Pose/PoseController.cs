@@ -59,8 +59,8 @@ namespace Drone_Simulator.Pose
             {
                 Quaternion orientation = e.Reading.Orientation;
 
-                Vector3 angles = QuaternionToEuler(NormalizedToDegrees(orientation));
-                // Log.Debug(angles.X + " " + angles.Y + " " + angles.Z);
+                // Quaternion angles = NormalizedToDegrees(orientation);
+                Quaternion angles = NormalizedToRadians(orientation);
                 _socketDecorator.SendPose(new Pose(angles.X, angles.Y, angles.Z));
 
                 _isRunning = false;
@@ -85,6 +85,15 @@ namespace Drone_Simulator.Pose
             q.X *= 180;
             q.Y *= 180;
             q.Z *= 180;
+
+            return q;
+        }
+
+        private Quaternion NormalizedToRadians(Quaternion q)
+        {
+            q.X *= Convert.ToSingle(Math.PI);
+            q.Y *= Convert.ToSingle(Math.PI);
+            q.Z *= Convert.ToSingle(Math.PI);
 
             return q;
         }
@@ -130,10 +139,6 @@ namespace Drone_Simulator.Pose
             double siny_cosp = 2 * (q.W * q.Z + q.X * q.Y);
             double cosy_cosp = 1 - 2 * (q.Y * q.Y + q.Z * q.Z);
             eulerAngles.Z = Convert.ToSingle(Math.Atan2(siny_cosp, cosy_cosp));
-
-            eulerAngles.X = q.X;
-            eulerAngles.Y = q.Y;
-            eulerAngles.Z = q.Z;
 
             return eulerAngles;
         }
