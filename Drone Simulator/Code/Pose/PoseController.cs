@@ -112,6 +112,8 @@ namespace Drone_Simulator.Pose
             // eulerAngles.Y = Convert.ToSingle(Math.Atan2(t3, t4));
             // eulerAngles.Z = Convert.ToSingle(Math.Atan2(t1, t0));
             
+            
+            // https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#Quaternion_to_Euler_angles_conversion
             // roll (x-axis rotation)
             double sinr_cosp = 2 * (q.W * q.X + q.Y * q.Z);
             double cosr_cosp = 1 - 2 * (q.X * q.X + q.Y * q.Y);
