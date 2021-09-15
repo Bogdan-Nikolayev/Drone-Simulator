@@ -131,6 +131,10 @@ namespace Drone_Simulator.Pose
             double cosy_cosp = 1 - 2 * (q.Y * q.Y + q.Z * q.Z);
             eulerAngles.Z = Convert.ToSingle(Math.Atan2(siny_cosp, cosy_cosp));
 
+            eulerAngles.X = q.X;
+            eulerAngles.Y = q.Y;
+            eulerAngles.Z = q.Z;
+
             return eulerAngles;
         }
     }

@@ -56,6 +56,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/dd/499c6731/HardwareVideoDecoderFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/8e/fe12a2bc/JavascriptInterfaceAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/a1/cf4a5607/SoftwareVideoDecoderFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C8A8A6F1-AD7B-4F4D-87FC-FB20B9299272/C/Vector3_Intrinsics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/e7/6b36183e/Permission.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4124E740-F7CA-4DC6-ABF7-FC366FB2D9CA/78/8935a79d/ContextCompat.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/55/700fa1b9/PeerConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
@@ -150,7 +151,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9b15498" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-15T15:47:48.387985200Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-15T16:49:44.517949200Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="INTEGER" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -207,7 +208,8 @@
       <workItem from="1631614628687" duration="6004000" />
       <workItem from="1631624145347" duration="475000" />
       <workItem from="1631624944021" duration="16275000" />
-      <workItem from="1631696307464" duration="18137000" />
+      <workItem from="1631696307464" duration="19285000" />
+      <workItem from="1631723948530" duration="865000" />
     </task>
     <servers />
   </component>
