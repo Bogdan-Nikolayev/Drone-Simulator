@@ -59,9 +59,10 @@ namespace Drone_Simulator.Pose
             {
                 Quaternion orientation = e.Reading.Orientation;
 
+                Quaternion angles = orientation;
                 // Quaternion angles = NormalizedToDegrees(orientation);
-                Quaternion angles = NormalizedToRadians(orientation);
-                _socketDecorator.SendPose(new Pose(angles.X, angles.Y, angles.Z));
+                // Quaternion angles = NormalizedToRadians(orientation);
+                _socketDecorator.SendPose(new Pose(angles.X, angles.Y, angles.Z, angles.W));
 
                 _isRunning = false;
             };
@@ -94,6 +95,15 @@ namespace Drone_Simulator.Pose
             q.X *= Convert.ToSingle(Math.PI);
             q.Y *= Convert.ToSingle(Math.PI);
             q.Z *= Convert.ToSingle(Math.PI);
+
+            return q;
+        }
+
+        private Quaternion AddHalfARound(Quaternion q)
+        {
+            q.X += 1;
+            q.Y += 1;
+            q.Z += 1;
 
             return q;
         }

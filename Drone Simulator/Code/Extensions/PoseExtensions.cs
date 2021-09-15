@@ -10,6 +10,7 @@ namespace Drone_Simulator.Extensions
             json.Put(nameof(pose.RotationX), pose.RotationX);
             json.Put(nameof(pose.RotationY), pose.RotationY);
             json.Put(nameof(pose.RotationZ), pose.RotationZ);
+            json.Put(nameof(pose.RotationW), pose.RotationW);
 
             return json.ToString();
         }
@@ -22,7 +23,8 @@ namespace Drone_Simulator.Extensions
             return new Pose.Pose(
                 (float)jsonObject.GetDouble(nameof(Pose.Pose.RotationX)),
                 (float)jsonObject.GetDouble(nameof(Pose.Pose.RotationY)),
-                (float)jsonObject.GetDouble(nameof(Pose.Pose.RotationZ))
+                (float)jsonObject.GetDouble(nameof(Pose.Pose.RotationZ)),
+                (float)jsonObject.GetDouble(nameof(Pose.Pose.RotationW))
             );
         }
     }
