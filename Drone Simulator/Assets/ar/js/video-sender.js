@@ -1,4 +1,10 @@
-startVideoStreaming();
+// Sometimes the connection happens before the recipient subscribes
+// to a new track("arjs-video-loaded" event is triggered late).
+// A timeout is required to ensure that the connection is performed
+// only after the recipient subscribes to the new track.;
+setTimeout(function () {
+  startVideoStreaming();
+}, 3000)
 
 function startVideoStreaming() {
   navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(
