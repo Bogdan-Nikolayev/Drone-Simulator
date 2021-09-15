@@ -12,19 +12,24 @@ namespace Drone_Simulator.Sockets
     {
         protected Java.Net.Socket _socket;
 
+        private static readonly object _outputLock = new object();
+
         public event SocketMessageHandler StringReceived;
 
         public void SendString(sbyte messageType, string message, bool log = true)
         {
-            using DataOutputStream outputStream = new DataOutputStream(_socket.OutputStream);
-            byte[] bytes = Encoding.UTF8.GetBytes(message);
-            // 1 byte from "messageType".
-            outputStream.WriteInt(bytes.Length + 1);
-            outputStream.WriteByte(messageType);
-            outputStream.Write(bytes);
+            lock (_outputLock)
+            {
+                using DataOutputStream outputStream = new DataOutputStream(_socket.OutputStream);
+                byte[] bytes = Encoding.UTF8.GetBytes(message);
+                // 1 byte from "messageType".
+                outputStream.WriteInt(bytes.Length + 1);
+                outputStream.WriteByte(messageType);
+                outputStream.Write(bytes);
 
-            if (log)
-                Log.Debug("Sent: " + Encoding.UTF8.GetString(bytes));
+                if (log)
+                    Log.Debug("Sent: " + Encoding.UTF8.GetString(bytes));
+            }
         }
 
         protected void StartListening()
@@ -36,7 +41,6 @@ namespace Drone_Simulator.Sockets
                 {
                     int totalLength = inputStream.ReadInt();
                     sbyte messageType = inputStream.ReadByte();
-
                     using ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
 
                     // The following code throws the following exception:
@@ -52,13 +56,18 @@ namespace Drone_Simulator.Sockets
                     while (progressLength != totalLength)
                     {
                         byte[] buffer = new byte[1024];
+                        // Log.Debug("Total: " + totalLength);
+                        // Log.Debug("Progress: " + progressLength);
                         int remainingLength = totalLength - progressLength;
+                        // Log.Debug("Remaining: " + remainingLength);
                         int readLength = Math.Min(remainingLength, buffer.Length);
+                        // Log.Debug("Read: " + readLength);
 
-                        inputStream.ReadFully(buffer, 0, readLength);
-                        resultStream.Write(buffer, 0, readLength);
+                        int inputLength = inputStream.Read(buffer, 0, readLength);
+                        // Log.Debug("Input: " + inputLength);
+                        resultStream.Write(buffer, 0, inputLength);
 
-                        progressLength += readLength;
+                        progressLength += inputLength;
                     }
 
                     string message = Encoding.UTF8.GetString(resultStream.ToByteArray());
