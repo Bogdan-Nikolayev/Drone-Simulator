@@ -73,6 +73,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/c6/89ef5f58/IVideoEncoderFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/16/5deeed2e/INativePeerConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10F4CE6F-0D06-4A7F-842C-ADA7A7B11C05/2a/51443c19/DefaultVideoEncoderFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/8e/83a96526/Handler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E86011D6-A1FC-441E-8D2F-73854968616E/9b/6f09327f/Activity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1B39A03C-32EC-4625-8A78-21E202E0269F/161/Mutex.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BD6BD528-A878-4B7C-AF03-E9F25C9F0D7B/a1/d472d72c/IJavaPeerable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -83,7 +84,6 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-recorder.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcSignalingServer.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/obj/Debug/90/assets/ar/js/main.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcMessageType.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateReciever.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/IIceCandidateReceiver.cs" />
@@ -111,26 +111,27 @@
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/Pose.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/WebRtcJavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/JavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/Native/WebRtcIceCandidatesCollector.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseJavaScriptInterface.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/GrantedWebChromeClient.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Extensions/PoseExtensions.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/MutableRunnable.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/main.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ISocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-sender.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/video-receiver.js" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseSocketDecorator.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/ar.html" />
       <option value="$PROJECT_DIR$/Drone Simulator/Assets/ar/js/ar-js-controller.js" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseController.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/WebRtcJavaScriptInterface.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/Signaling/WebRtcSignalingServer.cs" />
-      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ServerSocket.cs" />
       <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/ClientSocket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Pose/PoseController.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Browser/GrantedWebChromeClient.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WifiDirect/WifiDirectFragment.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Sockets/Socket.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/Extensions/PoseExtensions.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/WebRTC/Native/WebRtcIceCandidatesCollector.cs" />
+      <option value="$PROJECT_DIR$/Drone Simulator/Code/MainActivity.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -148,8 +149,8 @@
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9b15498" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-14T17:49:58.246282500Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R52M80PQ5FF" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-15T10:49:30.777799900Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="INTEGER" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -205,7 +206,8 @@
       <workItem from="1631544152275" duration="13950000" />
       <workItem from="1631614628687" duration="6004000" />
       <workItem from="1631624145347" duration="475000" />
-      <workItem from="1631624944021" duration="15023000" />
+      <workItem from="1631624944021" duration="16275000" />
+      <workItem from="1631696307464" duration="4255000" />
     </task>
     <servers />
   </component>

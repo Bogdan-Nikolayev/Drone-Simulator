@@ -19,6 +19,7 @@ using Xam.WebRtc.Android;
 
 namespace Drone_Simulator
 {
+    // TODO: Cleanup and refactoring.
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {

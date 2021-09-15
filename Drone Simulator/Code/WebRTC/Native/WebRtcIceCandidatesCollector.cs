@@ -7,7 +7,7 @@ using Xam.WebRtc.Android;
 
 namespace Drone_Simulator.WebRTC.Native
 {
-    // TODO: Refactoring.
+    // TODO: Cleanup and refactor this class and Observers.
     public class WebRtcIceCandidatesCollector : IIceCandidateObserver
     {
         private readonly WebRtcSignalingServer _signalingServer;

@@ -18,7 +18,7 @@ namespace Drone_Simulator.Browser
         public override bool OnConsoleMessage(ConsoleMessage? consoleMessage)
         {
             Log.Debug(
-                $"[JavaScript][{consoleMessage.InvokeMessageLevel()}] {consoleMessage.Message()} " +
+                $"[JavaScript]({consoleMessage.InvokeMessageLevel()}) {consoleMessage.Message()} " +
                 $"[{consoleMessage.SourceId()}:{consoleMessage.LineNumber()}]");
 
             return true;

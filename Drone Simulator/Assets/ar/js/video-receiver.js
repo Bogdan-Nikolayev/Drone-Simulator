@@ -1,6 +1,6 @@
 ﻿// window.onload = subscribeToRemoteMediaStream;
 this.addEventListener("arjs-video-loaded", () => {
-    subscribeToRemoteMediaStream();
+  subscribeToRemoteMediaStream();
 });
 
 function subscribeToRemoteMediaStream() {

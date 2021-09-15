@@ -14,6 +14,7 @@ namespace Drone_Simulator.Extensions
             return json.ToString();
         }
 
+        // TODO: Make more specific extension method source (e. g. JSONObject).
         public static Pose.Pose ParsePoseJson(this string json)
         {
             JSONObject jsonObject = new JSONObject(json);
