@@ -5,7 +5,7 @@ window.onload = function () {
 }
 
 function receivePose(poseJSON) {
-    // console.log("Received pose: " + poseJSON);
+    console.log("Received pose: " + poseJSON);
     let pose = JSON.parse(poseJSON);
     setRotation(pose.RotationX, pose.RotationY, pose.RotationZ);
 }

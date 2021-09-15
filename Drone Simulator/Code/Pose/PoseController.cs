@@ -60,8 +60,8 @@ namespace Drone_Simulator.Pose
                 Quaternion orientation = e.Reading.Orientation;
 
                 Vector3 angles = QuaternionToEuler(NormalizedToDegrees(orientation));
-                Log.Debug(angles.X + " " + angles.Y + " " + angles.Z);
-                // _socketDecorator.SendPose(new Pose(angles.X, angles.Y, angles.Z));
+                // Log.Debug(angles.X + " " + angles.Y + " " + angles.Z);
+                _socketDecorator.SendPose(new Pose(angles.X, angles.Y, angles.Z));
 
                 _isRunning = false;
             };
@@ -111,8 +111,8 @@ namespace Drone_Simulator.Pose
             // eulerAngles.X = Convert.ToSingle(Math.Asin(t2));
             // eulerAngles.Y = Convert.ToSingle(Math.Atan2(t3, t4));
             // eulerAngles.Z = Convert.ToSingle(Math.Atan2(t1, t0));
-            
-            
+
+
             // https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#Quaternion_to_Euler_angles_conversion
             // roll (x-axis rotation)
             double sinr_cosp = 2 * (q.W * q.X + q.Y * q.Z);

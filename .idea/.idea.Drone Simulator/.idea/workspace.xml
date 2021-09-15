@@ -150,7 +150,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9b15498" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-15T15:24:00.123213400Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-15T15:47:48.387985200Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="INTEGER" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -207,7 +207,7 @@
       <workItem from="1631614628687" duration="6004000" />
       <workItem from="1631624145347" duration="475000" />
       <workItem from="1631624944021" duration="16275000" />
-      <workItem from="1631696307464" duration="17106000" />
+      <workItem from="1631696307464" duration="18137000" />
     </task>
     <servers />
   </component>
